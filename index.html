@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Apex Arbor Holding Limited — An independent industry-focused investment company headquartered in Singapore, backed by Affirma Capital, integrating AI-driven intelligent decision-making with a rigorous governance framework." />
+  <meta property="og:title" content="Apex Arbor Holding Limited" />
+  <meta property="og:description" content="An independent investment platform headquartered in Singapore, backed by Affirma Capital. Integrating AI-driven intelligent decision-making with a rigorous governance framework." />
+  <meta property="og:type" content="website" />
+  <title>Apex Arbor Holding Limited</title>
+
+  <!-- Design System -->
+  <link rel="stylesheet" href="css/design-system.css" />
+  <!-- Remix Icon Library (Open Source) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css" />
+  <!-- Navigation -->
+  <link rel="stylesheet" href="css/nav.css" />
+  <!-- Sections -->
+  <link rel="stylesheet" href="css/hero.css" />
+  <link rel="stylesheet" href="css/about.css" />
+  <link rel="stylesheet" href="css/mission.css" />
+  <link rel="stylesheet" href="css/business.css" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/edge.css" />
+  <link rel="stylesheet" href="css/leadership.css" />
+  <link rel="stylesheet" href="css/news.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <!-- Modal -->
+  <link rel="stylesheet" href="css/modal.css" />
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════════ -->
+  <header id="navbar" class="navbar" role="banner">
+    <div class="container navbar__inner">
+      <!-- Logo -->
+      <a href="#home" class="navbar__logo" aria-label="Apex Arbor Home">
+        <img src="images/apex_logo_white.png" alt="Apex Arbor Logo" class="navbar__logo-img" />
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="navbar__links" role="navigation" aria-label="Main navigation">
+        <a href="#about"    class="navbar__link">About</a>
+        <a href="#mission"  class="navbar__link">Mission</a>
+        <a href="#business" class="navbar__link">Business</a>
+        <a href="#global"   class="navbar__link">Global</a>
+        <a href="#edge"     class="navbar__link">Edge</a>
+        <a href="#news"     class="navbar__link">Track Record</a>
+        <a href="#contact"  class="btn btn-outline btn-sm navbar__cta">Contact Us</a>
+      </nav>
+
+      <!-- Mobile Hamburger -->
+      <button class="navbar__hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="navbar__mobile" id="mobile-menu" role="navigation" aria-label="Mobile navigation">
+      <a href="#about"      class="navbar__mobile-link">About</a>
+      <a href="#mission"    class="navbar__mobile-link">Mission</a>
+      <a href="#business"   class="navbar__mobile-link">Business</a>
+      <a href="#global"     class="navbar__mobile-link">Global</a>
+      <a href="#edge"       class="navbar__mobile-link">Edge</a>
+      <a href="#news"       class="navbar__mobile-link">Track Record</a>
+      <a href="#contact"    class="navbar__mobile-link">Contact Us</a>
+    </div>
+  </header>
+
+
+  <!-- ═══════════════════════════════════════
+       SECTION 1 — HERO
+  ═══════════════════════════════════════ -->
+  <section id="home" class="hero" aria-label="Hero banner">
+    <!-- Background Layer: image + gradient + orbs + grid -->
+    <div class="hero__bg">
+      <img
+        src="images/A_premium_corporate_hero_image_2026-03-31T18-08-27.png"
+        alt=""
+        class="hero__bg-image"
+        aria-hidden="true"
+      />
+      <div class="hero__bg-overlay"></div>
+      <div class="bg-orb bg-orb-blue" style="width:600px;height:600px;top:-200px;left:-150px;"></div>
+      <div class="bg-orb bg-orb-cyan" style="width:400px;height:400px;top:30%;right:-100px;"></div>
+      <div class="hero__grid grid-bg"></div>
+    </div>
+
+    <!-- Content Layer: text + stats -->
+    <div class="hero__content">
+      <div class="hero__badge section-eyebrow" data-reveal>
+        Singapore &middot; Thailand &middot; Malaysia &middot; Japan
+      </div>
+
+      <h1 class="hero__title" data-reveal data-delay="1" style="display:flex;flex-direction:column;width:fit-content;max-width:100%;">
+        <div class="hero__title-line" style="white-space:nowrap;">Building on Two Decades</div>
+        <div class="hero__title-line" style="white-space:nowrap;">of <span class="text-gradient-cyan">Investment Excellence</span></div>
+      </h1>
+
+      <p class="hero__subtitle" data-reveal data-delay="2">
+        An independent industry-focused investment platform headquartered in Singapore,
+        backed by Affirma Capital — deploying capital with AI-driven intelligence
+        and institutional-grade governance across Asia-Pacific.
+      </p>
+
+      <div class="hero__actions" data-reveal data-delay="3">
+        <a href="#about" class="btn btn-primary btn-lg">Learn More</a>
+        <a href="#contact"    class="btn btn-outline btn-lg">Contact Us</a>
+      </div>
+
+      <!-- Stats Bar — full-width bottom strip -->
+      <div class="hero__stats-bar" data-reveal data-delay="4">
+        <div class="hero__stat">
+          <div class="stat-number text-gradient-cyan">$4B+</div>
+          <div class="stat-label">Assets Under Management</div>
+        </div>
+        <div class="hero__stat-divider"></div>
+        <div class="hero__stat">
+          <div class="stat-number text-gradient-blue">20+</div>
+          <div class="stat-label">Years in Emerging Markets</div>
+        </div>
+        <div class="hero__stat-divider"></div>
+        <div class="hero__stat">
+          <div class="stat-number text-gradient-cyan">99</div>
+          <div class="stat-label">Investments Made</div>
+        </div>
+        <div class="hero__stat-divider"></div>
+        <div class="hero__stat">
+          <div class="stat-number text-gradient-blue">59</div>
+          <div class="stat-label">Full Exits</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="hero__scroll" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       SECTION 2 — ABOUT
+  ═══════════════════════════════════════ -->
+  <section id="about" class="about section-padding" aria-labelledby="about-title">
+    <div class="about__bg"></div>
+    <div class="container">
+      <div class="about__inner">
+        <!-- Left: Text -->
+        <div class="about__text">
+          <div class="section-eyebrow" data-reveal>About Us</div>
+          <h2 id="about-title" class="text-section-title" data-reveal data-delay="1">
+            An <span class="text-gradient-cyan">Independent Platform</span><br/>Backed by Affirma Capital
+          </h2>
+          <div class="divider" data-reveal data-delay="2"></div>
+          <p class="text-body-lg" data-reveal data-delay="2">
+            Apex Arbor Holding Limited is a globally-oriented industry-focused investment company headquartered in Singapore,
+            with <strong>Affirma Capital</strong> as a major shareholder. It serves as an independent
+            investment platform with strong partnership with Affirma Capital, focusing on cross-industry and
+            cross-geography investments, integrating AI-driven intelligent decision-making with a rigorous governance framework.
+            Affirma Capital — formerly Standard Chartered Private Equity — has invested over
+            <strong>USD 5.8 billion</strong> across 99 companies with 59 full exits,
+            and its investment philosophy and governance standards are deeply embedded in Apex Arbor's approach.
+          </p>
+          <p class="text-body-lg" style="margin-top:1.25rem;" data-reveal data-delay="3">
+            Regulated by the Monetary Authority of Singapore (MAS), Apex Arbor upholds a world-class
+            governance framework inherited from Standard Chartered Bank — the institutional foundation
+            of its major shareholder — with ESG principles embedded in every investment decision.
+            We deploy capital with disciplined deal structuring, strong minority protections,
+            and an intense focus on value creation.
+          </p>
+          <div class="about__pills" data-reveal data-delay="4">
+            <span class="tag tag-cyan">Singapore HQ</span>
+            <span class="tag tag-blue">Affirma Capital Shareholder</span>
+            <span class="tag tag-cyan">AI-Driven Strategy</span>
+            <span class="tag tag-blue">4 Regional Offices</span>
+          </div>
+        </div>
+
+        <!-- Right: Cards -->
+        <div class="about__cards">
+          <div class="about__card card" data-reveal data-delay="2">
+            <div class="about__card-icon">
+              <i class="ri-building-2-line" style="font-size:28px;color:#0066FF;"></i>
+            </div>
+            <h3 class="text-card-title">Singapore HQ</h3>
+            <p class="text-body-lg" style="font-size:0.9rem;margin-top:0.5rem;">Regulated by the Monetary Authority of Singapore (MAS). Operating from Singapore with offices in Thailand, Malaysia, and Japan.</p>
+          </div>
+          <div class="about__card card" data-reveal data-delay="4">
+            <div class="about__card-icon">
+              <i class="ri-shield-check-line" style="font-size:28px;color:#00D4AA;"></i>
+            </div>
+            <h3 class="text-card-title">Institutional Governance</h3>
+            <p class="text-body-lg" style="font-size:0.9rem;margin-top:0.5rem;">World-class governance framework inherited from Standard Chartered Bank, with quarterly executive, audit, risk, and valuation committee oversight.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       SECTION 3 — MISSION & VALUES
+  ═══════════════════════════════════════ -->
+  <section id="mission" class="mission section-padding" aria-labelledby="mission-title">
+    <div class="mission__bg">
+      <div class="bg-orb bg-orb-blue" style="width:500px;height:500px;bottom:-100px;right:-100px;"></div>
+    </div>
+    <div class="container">
+      <div class="mission__header" data-reveal>
+        <div class="section-eyebrow">Our Mission & Values</div>
+        <h2 id="mission-title" class="text-section-title">
+          Guided by <span class="text-gradient-cyan">Purpose</span>,<br/>Driven by <span class="text-gradient-blue">Precision</span>
+        </h2>
+      </div>
+
+      <!-- Mission Statement -->
+      <div class="mission__statement" data-reveal data-delay="1">
+        <blockquote class="mission__quote">
+          "To harness the transformative power of artificial intelligence and global capital,
+          creating lasting value for investors, partners, and communities worldwide."
+        </blockquote>
+      </div>
+
+      <!-- Values Grid -->
+      <div class="mission__values">
+        <div class="mission__value card" data-reveal data-delay="1">
+          <div class="mission__value-number">01</div>
+          <h3 class="text-card-title">Integrity</h3>
+          <p class="text-body-lg" style="font-size:0.9rem;margin-top:0.75rem;">We uphold the highest standards of transparency and ethical conduct in every investment decision and business relationship.</p>
+        </div>
+        <div class="mission__value card" data-reveal data-delay="2">
+          <div class="mission__value-number">02</div>
+          <h3 class="text-card-title">Innovation</h3>
+          <p class="text-body-lg" style="font-size:0.9rem;margin-top:0.75rem;">We relentlessly pursue breakthrough technologies and unconventional thinking to stay ahead of global market shifts.</p>
+        </div>
+        <div class="mission__value card" data-reveal data-delay="3">
+          <div class="mission__value-number">03</div>
+          <h3 class="text-card-title">Impact</h3>
+          <p class="text-body-lg" style="font-size:0.9rem;margin-top:0.75rem;">Beyond financial returns, we measure success by the positive transformation we bring to industries and ecosystems.</p>
+        </div>
+        <div class="mission__value card" data-reveal data-delay="4">
+          <div class="mission__value-number">04</div>
+          <h3 class="text-card-title">Intelligence</h3>
+          <p class="text-body-lg" style="font-size:0.9rem;margin-top:0.75rem;">Data, AI, and deep expertise converge to power smarter decisions, faster execution, and superior outcomes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       SECTION 4 — CORE BUSINESSES
+  ═══════════════════════════════════════ -->
+  <section id="business" class="business section-padding-lg" aria-labelledby="business-title">
+    <div class="business__bg"></div>
+    <div class="container">
+      <div class="section__header" data-reveal>
+        <div class="section-eyebrow">Core Business Units</div>
+        <h2 id="business-title" class="text-section-title">
+          A Diversified <span class="text-gradient-cyan">Portfolio</span>
+        </h2>
+        <p class="text-body-lg" style="max-width:560px;margin-top:1rem;">
+          Six strategic pillars, each engineered for market leadership in its domain.
+        </p>
+      </div>
+
+      <div class="business__grid">
+        <!-- Card 1 -->
+        <article class="business__card card" data-reveal data-delay="1">
+          <div class="business__card-bg" style="background-image:url('images/biz-ai-tech.png')"></div>
+          <div class="business__card-icon">
+            <i class="ri-cpu-line" style="font-size:28px;color:#00D4AA;"></i>
+          </div>
+          <span class="tag tag-cyan">Technology</span>
+          <h3 class="text-card-title">AI Technology &amp; Innovation</h3>
+          <p class="text-body-lg" style="font-size:0.875rem;">Technology-enabled investment strategies and AI applications across the portfolio's operations and due diligence processes.</p>
+          <button class="btn btn-ghost btn-sm business__card-btn"
+                  data-modal="business-ai"
+                  aria-haspopup="dialog"
+                  aria-label="Learn more about AI Technology">
+            Learn More <i class="ri-arrow-right-line" style="font-size:14px;"></i>
+          </button>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="business__card card" data-reveal data-delay="2">
+          <div class="business__card-bg" style="background-image:url('images/biz-investment.png')"></div>
+          <div class="business__card-icon">
+            <i class="ri-funds-line" style="font-size:28px;color:#0066FF;"></i>
+          </div>
+          <span class="tag tag-blue">Finance</span>
+          <h3 class="text-card-title">Investment Management</h3>
+          <p class="text-body-lg" style="font-size:0.875rem;">Private equity, growth capital, and structured investment across TMT, consumer, and industry sectors in emerging markets.</p>
+          <button class="btn btn-ghost btn-sm business__card-btn"
+                  data-modal="business-investment"
+                  aria-haspopup="dialog"
+                  aria-label="Learn more about Investment Management">
+            Learn More <i class="ri-arrow-right-line" style="font-size:14px;"></i>
+          </button>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="business__card card" data-reveal data-delay="3">
+          <div class="business__card-bg" style="background-image:url('images/biz-healthcare.png')"></div>
+          <div class="business__card-icon">
+            <i class="ri-heart-pulse-line" style="font-size:28px;color:#00D4AA;"></i>
+          </div>
+          <span class="tag tag-cyan">Healthcare</span>
+          <h3 class="text-card-title">Healthcare Innovation</h3>
+          <p class="text-body-lg" style="font-size:0.875rem;">Investments in healthcare services, pharmaceuticals, and medical technology across emerging markets.</p>
+          <button class="btn btn-ghost btn-sm business__card-btn"
+                  data-modal="business-health"
+                  aria-haspopup="dialog"
+                  aria-label="Learn more about Healthcare Innovation">
+            Learn More <i class="ri-arrow-right-line" style="font-size:14px;"></i>
+          </button>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="business__card card" data-reveal data-delay="1">
+          <div class="business__card-bg" style="background-image:url('images/biz-energy.png')"></div>
+          <div class="business__card-icon">
+            <i class="ri-sun-line" style="font-size:28px;color:#0066FF;"></i>
+          </div>
+          <span class="tag tag-blue">Energy</span>
+          <h3 class="text-card-title">Energy Transition</h3>
+          <p class="text-body-lg" style="font-size:0.875rem;">Clean energy and infrastructure investments aligned with ESG principles across emerging markets.</p>
+          <button class="btn btn-ghost btn-sm business__card-btn"
+                  data-modal="business-energy"
+                  aria-haspopup="dialog"
+                  aria-label="Learn more about Energy Transition">
+            Learn More <i class="ri-arrow-right-line" style="font-size:14px;"></i>
+          </button>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="business__card card" data-reveal data-delay="2">
+          <div class="business__card-bg" style="background-image:url('images/biz-realestate.png')"></div>
+          <div class="business__card-icon">
+            <i class="ri-building-4-line" style="font-size:28px;color:#00D4AA;"></i>
+          </div>
+          <span class="tag tag-cyan">Real Estate</span>
+          <h3 class="text-card-title">Real Estate &amp; Infrastructure</h3>
+          <p class="text-body-lg" style="font-size:0.875rem;">Real estate and infrastructure investments including logistics, commercial property, and data center assets.</p>
+          <button class="btn btn-ghost btn-sm business__card-btn"
+                  data-modal="business-realestate"
+                  aria-haspopup="dialog"
+                  aria-label="Learn more about Real Estate and Infrastructure">
+            Learn More <i class="ri-arrow-right-line" style="font-size:14px;"></i>
+          </button>
+        </article>
+
+        <!-- Card 6 -->
+        <article class="business__card card" data-reveal data-delay="3">
+          <div class="business__card-bg" style="background-image:url('images/biz-luxury.png')"></div>
+          <div class="business__card-icon">
+            <i class="ri-vip-diamond-line" style="font-size:28px;color:#0066FF;"></i>
+          </div>
+          <span class="tag tag-blue">Luxury</span>
+          <h3 class="text-card-title">Luxury &amp; Lifestyle</h3>
+          <p class="text-body-lg" style="font-size:0.875rem;">Premium brand investments, hospitality assets, and lifestyle services targeting growing consumer markets.</p>
+          <button class="btn btn-ghost btn-sm business__card-btn"
+                  data-modal="business-luxury"
+                  aria-haspopup="dialog"
+                  aria-label="Learn more about Luxury and Lifestyle">
+            Learn More <i class="ri-arrow-right-line" style="font-size:14px;"></i>
+          </button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       SECTION 5 — GLOBAL FOOTPRINT
+  ═══════════════════════════════════════ -->
+  <section id="global" class="global section-padding" aria-labelledby="global-title">
+    <div class="global__bg">
+      <div class="bg-orb bg-orb-cyan" style="width:450px;height:450px;top:50%;left:50%;transform:translate(-50%,-50%);"></div>
+    </div>
+    <div class="container">
+      <div class="section__header" data-reveal>
+        <div class="section-eyebrow">Global Presence</div>
+        <h2 id="global-title" class="text-section-title">
+          Operating Across <span class="text-gradient-cyan">Asia-Pacific</span>
+        </h2>
+        <p class="text-body-lg" style="max-width:520px;margin-top:1rem;">
+          Strategic offices and investment operations spanning Southeast Asia and Northeast Asia — Singapore, Thailand, Malaysia, and Japan.
+        </p>
+      </div>
+
+      <!-- World Map SVG Placeholder -->
+      <div class="global__map" data-reveal data-delay="1" role="img" aria-label="World map showing Apex Arbor global offices">
+        <div class="global__map-placeholder">
+          <div class="global__map-inner">
+            <!-- SVG World Map simplified -->
+            <svg viewBox="0 0 900 450" class="global__svg" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <!-- Background -->
+              <rect width="900" height="450" fill="transparent"/>
+              <!-- Simplified continents -->
+              <!-- North America -->
+              <path d="M 120 80 L 180 60 L 220 70 L 240 120 L 230 170 L 200 200 L 160 210 L 130 180 L 110 140 Z" fill="rgba(224,231,255,0.06)" stroke="rgba(224,231,255,0.15)" stroke-width="1"/>
+              <!-- South America -->
+              <path d="M 170 230 L 210 220 L 230 250 L 220 300 L 200 340 L 180 350 L 165 320 L 155 280 Z" fill="rgba(224,231,255,0.06)" stroke="rgba(224,231,255,0.15)" stroke-width="1"/>
+              <!-- Europe -->
+              <path d="M 400 70 L 450 60 L 480 80 L 470 110 L 440 120 L 410 110 L 395 90 Z" fill="rgba(224,231,255,0.06)" stroke="rgba(224,231,255,0.15)" stroke-width="1"/>
+              <!-- Africa -->
+              <path d="M 400 140 L 450 130 L 470 160 L 460 220 L 440 270 L 410 280 L 385 250 L 380 200 L 390 160 Z" fill="rgba(224,231,255,0.06)" stroke="rgba(224,231,255,0.15)" stroke-width="1"/>
+              <!-- Middle East -->
+              <path d="M 490 130 L 530 120 L 550 145 L 540 175 L 510 180 L 490 160 Z" fill="rgba(224,231,255,0.06)" stroke="rgba(224,231,255,0.15)" stroke-width="1"/>
+              <!-- Asia -->
+              <path d="M 560 60 L 680 50 L 730 80 L 750 130 L 720 170 L 680 190 L 630 180 L 590 150 L 555 120 L 545 90 Z" fill="rgba(224,231,255,0.06)" stroke="rgba(224,231,255,0.15)" stroke-width="1"/>
+              <!-- Australia -->
+              <path d="M 680 250 L 740 240 L 770 270 L 760 310 L 720 320 L 685 300 Z" fill="rgba(224,231,255,0.06)" stroke="rgba(224,231,255,0.15)" stroke-width="1"/>
+
+              <!-- Office Nodes with Pulse -->
+              <!-- Singapore (HQ) -->
+              <circle cx="680" cy="190" r="8" fill="#00D4AA" opacity="0.9"/>
+              <circle cx="680" cy="190" r="16" fill="#00D4AA" opacity="0.2" class="pulse"/>
+              <circle cx="680" cy="190" r="24" fill="#00D4AA" opacity="0.08" class="pulse pulse-2"/>
+              <text x="693" y="186" fill="#00D4AA" font-size="11" font-family="Inter,sans-serif" font-weight="600">Singapore (HQ)</text>
+
+              <!-- Bangkok -->
+              <circle cx="640" cy="195" r="6" fill="#0066FF" opacity="0.9"/>
+              <circle cx="640" cy="195" r="12" fill="#0066FF" opacity="0.2" class="pulse"/>
+              <text x="620" y="210" fill="#66AAFF" font-size="10" font-family="Inter,sans-serif">Bangkok</text>
+
+              <!-- Kuala Lumpur -->
+              <circle cx="660" cy="210" r="6" fill="#0066FF" opacity="0.9"/>
+              <circle cx="660" cy="210" r="12" fill="#0066FF" opacity="0.2" class="pulse"/>
+              <text x="670" y="220" fill="#66AAFF" font-size="10" font-family="Inter,sans-serif">Kuala Lumpur</text>
+
+              <!-- Tokyo -->
+              <circle cx="730" cy="110" r="6" fill="#0066FF" opacity="0.9"/>
+              <circle cx="730" cy="110" r="12" fill="#0066FF" opacity="0.2" class="pulse"/>
+              <text x="740" y="106" fill="#66AAFF" font-size="10" font-family="Inter,sans-serif">Tokyo</text>
+
+              <!-- Connection Lines -->
+              <line x1="680" y1="190" x2="640" y2="195" stroke="rgba(0,212,170,0.15)" stroke-width="1" stroke-dasharray="4,4"/>
+              <line x1="680" y1="190" x2="660" y2="210" stroke="rgba(0,212,170,0.15)" stroke-width="1" stroke-dasharray="4,4"/>
+              <line x1="680" y1="190" x2="730" y2="110" stroke="rgba(0,212,170,0.15)" stroke-width="1" stroke-dasharray="4,4"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Region Cards -->
+      <div class="global__regions">
+        <div class="global__region" data-reveal data-delay="1">
+          <div class="global__region-bg" style="background-image:url('images/region-asia.png')"></div>
+          <div class="global__region-content">
+            <div class="global__region-icon">
+              <i class="ri-earth-line" style="font-size:22px;color:#00D4AA;"></i>
+            </div>
+            <div class="tag tag-cyan" style="margin-bottom:0.5rem;">Singapore</div>
+            <p class="text-body-lg" style="font-size:0.875rem;">Global Headquarters</p>
+          </div>
+        </div>
+        <div class="global__region" data-reveal data-delay="2">
+          <div class="global__region-bg" style="background-image:url('images/region-americas.png')"></div>
+          <div class="global__region-content">
+            <div class="global__region-icon">
+              <i class="ri-earth-line" style="font-size:22px;color:#0066FF;"></i>
+            </div>
+            <div class="tag tag-blue" style="margin-bottom:0.5rem;">Thailand</div>
+            <p class="text-body-lg" style="font-size:0.875rem;">Bangkok Office</p>
+          </div>
+        </div>
+        <div class="global__region" data-reveal data-delay="3">
+          <div class="global__region-bg" style="background-image:url('images/region-europe.png')"></div>
+          <div class="global__region-content">
+            <div class="global__region-icon">
+              <i class="ri-earth-line" style="font-size:22px;color:#00D4AA;"></i>
+            </div>
+            <div class="tag tag-cyan" style="margin-bottom:0.5rem;">Malaysia</div>
+            <p class="text-body-lg" style="font-size:0.875rem;">Kuala Lumpur Office</p>
+          </div>
+        </div>
+        <div class="global__region" data-reveal data-delay="4">
+          <div class="global__region-bg" style="background-image:url('images/region-mea.png')"></div>
+          <div class="global__region-content">
+            <div class="global__region-icon">
+              <i class="ri-earth-line" style="font-size:22px;color:#0066FF;"></i>
+            </div>
+            <div class="tag tag-blue" style="margin-bottom:0.5rem;">Japan</div>
+            <p class="text-body-lg" style="font-size:0.875rem;">Tokyo Office</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       SECTION 6 — INVESTMENT EDGE
+  ═══════════════════════════════════════ -->
+  <section id="edge" class="edge section-padding" aria-labelledby="edge-title">
+    <div class="container">
+      <div class="section__header" data-reveal>
+        <div class="section-eyebrow">Our Edge</div>
+        <h2 id="edge-title" class="text-section-title">
+          Why <span class="text-gradient-cyan">Apex Arbor</span>
+        </h2>
+        <p class="text-body-lg" style="max-width:540px;margin-top:1rem;">
+          Three core strengths powering every investment decision.
+        </p>
+      </div>
+
+      <div class="edge__grid">
+        <div class="edge__item" data-reveal data-delay="1">
+          <div class="edge__item-num">01</div>
+          <div class="edge__item-content">
+            <h3 class="text-card-title">Technology-Driven</h3>
+            <p class="text-body-lg" style="font-size:0.9rem;margin-top:0.5rem;">Harnessing the transformative power of artificial intelligence and global capital, deeply integrating AI with investment decisions, portfolio monitoring, and operational efficiency.</p>
+            <button class="btn btn-ghost btn-sm" style="margin-top:1rem;" data-modal="edge-ai" aria-haspopup="dialog">Explore <i class="ri-arrow-right-line" style="font-size:14px;"></i></button>
+          </div>
+        </div>
+        <div class="edge__item" data-reveal data-delay="2">
+          <div class="edge__item-num">02</div>
+          <div class="edge__item-content">
+            <h3 class="text-card-title">Governance &amp; ESG</h3>
+            <p class="text-body-lg" style="font-size:0.9rem;margin-top:0.5rem;">Upholds a world-class governance framework inherited from Standard Chartered Bank, with ESG principles embedded in every investment decision and robust regulatory oversight.</p>
+            <button class="btn btn-ghost btn-sm" style="margin-top:1rem;" data-modal="edge-esg" aria-haspopup="dialog">Explore <i class="ri-arrow-right-line" style="font-size:14px;"></i></button>
+          </div>
+        </div>
+        <div class="edge__item" data-reveal data-delay="3">
+          <div class="edge__item-num">03</div>
+          <div class="edge__item-content">
+            <h3 class="text-card-title">Diversification &amp; Network</h3>
+            <p class="text-body-lg" style="font-size:0.9rem;margin-top:0.5rem;">Leverages a diversified portfolio across geographies and sectors, along with long-established global relationships, to create lasting value for investors, partners, and communities.</p>
+            <button class="btn btn-ghost btn-sm" style="margin-top:1rem;" data-modal="edge-network" aria-haspopup="dialog">Explore <i class="ri-arrow-right-line" style="font-size:14px;"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       SECTION 8 — NEWS & INSIGHTS
+  ═══════════════════════════════════════ -->
+  <section id="news" class="news section-padding" aria-labelledby="news-title">
+    <div class="container">
+      <div class="section__header" data-reveal>
+        <div class="section-eyebrow">Track Record &amp; Insights</div>
+        <h2 id="news-title" class="text-section-title">
+          Shareholder <span class="text-gradient-cyan">Track Record</span>
+        </h2>
+        <p class="text-body-lg" style="max-width:560px;margin-top:1rem;">
+          Affirma Capital's proven institutional track record — the investment philosophy and governance standards that shape Apex Arbor's approach.
+        </p>
+      </div>
+
+      <div class="news__grid">
+        <!-- News 1 -->
+        <article class="news__card card" data-reveal data-delay="1">
+          <div class="news__card-meta">
+            <span class="tag tag-cyan">Track Record</span>
+            <span class="text-muted" style="font-size:0.8rem;">Ongoing</span>
+          </div>
+          <h3 class="text-card-title" style="margin-top:0.75rem;font-size:1.1rem;line-height:1.4;">
+            59 Full Exits Generating Attractive PE Returns
+          </h3>
+          <p class="text-body-lg" style="font-size:0.875rem;margin-top:0.5rem;">
+            Affirma Capital has completed 59 full exits across Asia, the Middle East, and Africa, with a low loss ratio and attractive top-quartile realised returns through multiple economic cycles.
+          </p>
+        </article>
+
+        <!-- News 2 -->
+        <article class="news__card card" data-reveal data-delay="2">
+          <div class="news__card-meta">
+            <span class="tag tag-blue">Investment</span>
+            <span class="text-muted" style="font-size:0.8rem;">USD 5.8B Deployed</span>
+          </div>
+          <h3 class="text-card-title" style="margin-top:0.75rem;font-size:1.1rem;line-height:1.4;">
+            99 Investments Across Emerging Markets
+          </h3>
+          <p class="text-body-lg" style="font-size:0.875rem;margin-top:0.5rem;">
+            From consumer & retail to TMT, healthcare, and infrastructure — a diversified portfolio spanning Korea (21%), India (23%), Southeast Asia (13%), the Middle East (10%), and Africa (14%), with additional exposure across North Asia.
+          </p>
+        </article>
+
+        <!-- News 3 -->
+        <article class="news__card card" data-reveal data-delay="3">
+          <div class="news__card-meta">
+            <span class="tag tag-cyan">Governance</span>
+            <span class="text-muted" style="font-size:0.8rem;">MAS Regulated</span>
+          </div>
+          <h3 class="text-card-title" style="margin-top:0.75rem;font-size:1.1rem;line-height:1.4;">
+            World-Class Governance: Regulated Across Multiple Jurisdictions
+          </h3>
+          <p class="text-body-lg" style="font-size:0.875rem;margin-top:0.5rem;">
+            Regulated by the Monetary Authority of Singapore (MAS), the Financial Supervisory Service (FSS) in Korea, the DFSA in Dubai, and SEBI in India — governance standards developed and monitored centrally.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       SECTION 9 — CONTACT (Info Only, No Form)
+  ═══════════════════════════════════════ -->
+  <section id="contact" class="contact section-padding-lg" aria-labelledby="contact-title">
+    <div class="contact__bg">
+      <div class="bg-orb bg-orb-blue" style="width:500px;height:500px;top:-100px;right:-150px;"></div>
+      <div class="bg-orb bg-orb-cyan" style="width:300px;height:300px;bottom:-50px;left:-100px;"></div>
+    </div>
+    <div class="container">
+      <div class="contact__inner contact__inner--center">
+        <div class="contact__info" data-reveal>
+          <div class="section-eyebrow">Get In Touch</div>
+          <h2 id="contact-title" class="text-section-title">
+            Let's Build the<br/><span class="text-gradient-cyan">Future Together</span>
+          </h2>
+          <div class="divider divider-center" style="margin-top:1.5rem;margin-bottom:1.5rem;"></div>
+          <p class="text-body-lg" style="max-width:560px;">
+            Whether you're an investor, potential partner, or institution seeking collaboration,
+            we'd love to hear from you.
+          </p>
+
+          <div class="contact__details">
+            <div class="contact__detail-item">
+              <i class="ri-mail-line" style="font-size:20px;color:#00D4AA;flex-shrink:0;"></i>
+              <a href="mailto:apexarbor@apexarbor.ai" class="contact__detail-link">apexarbor@apexarbor.ai</a>
+            </div>
+            <div class="contact__detail-item">
+              <i class="ri-map-pin-line" style="font-size:20px;color:#0066FF;flex-shrink:0;transform:translateY(-10px);"></i>
+              <span>DTL No. 7 of Unit No. TNAO-3403 on the 34th floor, The Ninth Tower Building A, 34th Floor, Rama 9 Road, Huaykwang Sub-District, Huaykwang District, Bangkok</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__main">
+        <!-- Brand -->
+        <div class="footer__brand">
+          <a href="#home" class="navbar__logo footer__logo" aria-label="Apex Arbor Home">
+            <img src="images/apex_logo_white.png" alt="Apex Arbor Logo" class="navbar__logo-img" />
+          </a>
+          <p class="footer__brand-desc">
+            An independent industry-focused investment company headquartered in Singapore, backed by Affirma Capital as a major shareholder.
+            Integrating AI-driven intelligent decision-making with a rigorous governance framework
+            inherited from established private equity practices.
+          </p>
+        </div>
+
+        <!-- Nav Links -->
+        <div class="footer__links-group">
+          <h4 class="footer__links-title">Company</h4>
+          <ul class="footer__links">
+            <li><a href="#about"    class="footer__link">About Us</a></li>
+            <li><a href="#mission"  class="footer__link">Mission &amp; Values</a></li>
+            <li><a href="#news"     class="footer__link">Track Record</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__links-group">
+          <h4 class="footer__links-title">Business</h4>
+          <ul class="footer__links">
+            <li><a href="#business" class="footer__link">AI Technology</a></li>
+            <li><a href="#business" class="footer__link">Investment Management</a></li>
+            <li><a href="#business" class="footer__link">Healthcare Innovation</a></li>
+            <li><a href="#business" class="footer__link">Energy Transition</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__links-group">
+          <h4 class="footer__links-title">Contact</h4>
+          <ul class="footer__links">
+            <li><a href="mailto:apexarbor@apexarbor.ai" class="footer__link">apexarbor@apexarbor.ai</a></li>
+            <li><span class="footer__link-text">DTL No. 7 of Unit No. TNAO-3403 on the 34th floor, The Ninth Tower Building A, 34th Floor, Rama 9 Road, Huaykwang Sub-District, Huaykwang District, Bangkok</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copy">Apex Arbor Holding Limited. All rights reserved.</p>
+        <div class="footer__legal">
+          <a href="#" class="footer__legal-link">Privacy Policy</a>
+          <a href="#" class="footer__legal-link">Terms of Use</a>
+          <a href="#" class="footer__legal-link">Disclaimer</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ═══════════════════════════════════════
+       MODAL SYSTEM
+  ═══════════════════════════════════════ -->
+  <div id="modal-overlay" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+    <div class="modal" role="document">
+      <button class="modal__close" id="modal-close" aria-label="Close dialog">
+        <i class="ri-close-line" style="font-size:20px;"></i>
+      </button>
+      <div class="modal__header">
+        <span class="modal__tag tag tag-cyan" id="modal-tag"></span>
+        <h2 class="modal__title text-section-title" id="modal-title" style="margin-top:0.75rem;font-size:1.75rem;"></h2>
+      </div>
+      <div class="modal__body" id="modal-body"></div>
+    </div>
+  </div>
+
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/modal.js"></script>
+  <script src="js/nav.js"></script>
+
+</body>
+</html>

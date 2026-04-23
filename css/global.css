@@ -1,0 +1,100 @@
+/* ── GLOBAL FOOTPRINT ── */
+.global {
+  background: linear-gradient(180deg, var(--color-deep-space) 0%, #0C1E4A 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.global__bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.global .container { position: relative; z-index: 1; }
+
+/* Map */
+.global__map {
+  margin: var(--sp-12) auto;
+  max-width: 960px;
+}
+
+.global__map-placeholder {
+  background: rgba(255,255,255,0.02);
+  border: var(--border-subtle);
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  padding: var(--sp-8);
+  position: relative;
+}
+
+.global__map-inner {
+  position: relative;
+  width: 100%;
+}
+
+.global__svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Region Cards */
+.global__regions {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-4);
+  margin-top: var(--sp-4);
+}
+
+.global__region {
+  text-align: center;
+  padding: var(--sp-5) var(--sp-4);
+  background: rgba(255,255,255,0.03);
+  border: var(--border-subtle);
+  border-radius: var(--radius-xl);
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle background image in each region card */
+.global__region-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.1;
+  z-index: 0;
+}
+
+/* Ensure region content sits above the bg image */
+.global__region-content {
+  position: relative;
+  z-index: 1;
+}
+
+.global__region:hover {
+  background: rgba(0,212,170,0.05);
+  border-color: rgba(0,212,170,0.2);
+  transform: translateY(-3px);
+}
+
+.global__region-icon {
+  margin-bottom: var(--sp-3);
+  display: flex;
+  justify-content: center;
+}
+
+.global__region .tag { justify-content: center; }
+
+@media (max-width: 900px) {
+  .global__regions { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+  .global__regions { grid-template-columns: 1fr; }
+  .global__map-placeholder { padding: var(--sp-4); }
+}

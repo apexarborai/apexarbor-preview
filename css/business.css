@@ -1,0 +1,125 @@
+/* ── BUSINESS ── */
+.business {
+  background: var(--color-deep-space);
+  position: relative;
+  overflow: hidden;
+}
+
+.business__bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.business__bg-image {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.1;
+}
+
+.business .container { position: relative; z-index: 1; }
+
+.section__header {
+  margin-bottom: var(--sp-12);
+  text-align: center;
+}
+
+.section__header .section-eyebrow {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section__header p.text-body-lg {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.business__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-6);
+}
+
+.business__card {
+  display: flex;
+  flex-direction: column;
+  padding: var(--sp-10) var(--sp-8);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle background image in each business card */
+.business__card-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.08;
+  z-index: 0;
+}
+
+/* Ensure card content sits above the bg image */
+.business__card-icon,
+.business__card .tag,
+.business__card .text-card-title,
+.business__card .text-body-lg,
+.business__card .btn {
+  position: relative;
+  z-index: 1;
+}
+
+.business__card-icon {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,212,170,0.06);
+  border: 1px solid rgba(0,212,170,0.12);
+  border-radius: var(--radius-lg);
+  flex-shrink: 0;
+}
+
+/* Alternate icon background for even cards */
+.business__card:nth-child(even) .business__card-icon {
+  background: rgba(0,102,255,0.06);
+  border-color: rgba(0,102,255,0.12);
+}
+
+.business__card .tag {
+  margin-top: var(--sp-5);
+}
+
+.business__card .text-card-title {
+  margin-top: var(--sp-3);
+  line-height: 1.3;
+}
+
+.business__card .text-body-lg {
+  margin-top: var(--sp-3);
+  color: rgba(224, 231, 255, 0.7);
+}
+
+.business__card-btn {
+  margin-top: auto;
+  align-self: flex-start;
+  margin-top: var(--sp-6);
+}
+
+/* Hover border glow per sector */
+.business__card:nth-child(odd):hover  { border-color: rgba(0,212,170,0.35); }
+.business__card:nth-child(even):hover { border-color: rgba(0,102,255,0.35); }
+
+@media (max-width: 1024px) {
+  .business__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .business__grid { grid-template-columns: 1fr; }
+  .business__card { padding: var(--sp-8) var(--sp-6); }
+}
