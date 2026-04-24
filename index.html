@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta name="description" content="Apex Arbor Holding Limited — A global, capital-ready AI computing infrastructure service provider. Focused on building Asia-Pacific computing hubs, leveraging high-end GPU clusters, cross-border intelligent data centers, and enterprise-grade cloud computing services to construct a world-class AI computing foundation.">
+  <meta name="description" content="Apex Arbor Holding Limited — a global, capitalization-ready AI computing services provider. Focused on building Asia-Pacific computing hubs, delivering GPU computing clusters and cloud computing services to build the region's premier AI computing foundation.">
   <title>Apex Arbor Holding Limited</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -703,6 +703,34 @@
     .cap-badge span { font-family: 'Manrope', 'Segoe UI', sans-serif; font-size: 13px; font-weight: 800; color: #0058bc; }
 
     /* ═════════════════════════════════════
+       CAPITAL CARDS — 2-col, full-width
+       ═════════════════════════════════════ */
+    .cap-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    @media (min-width: 768px) {
+      .cap-grid { grid-template-columns: 1fr 1fr; }
+    }
+    .cap-card {
+      position: relative; overflow: hidden;
+      background: #fff; border: 1px solid rgba(0,0,0,0.06);
+      border-radius: 18px; padding: 36px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+      transition: box-shadow 0.25s, transform 0.25s;
+    }
+    .cap-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.08); transform: translateY(-5px); }
+    .cap-card-icon {
+      width: 50px; height: 50px; border-radius: 14px;
+      background: #eff6ff; display: flex; align-items: center; justify-content: center;
+      margin-bottom: 18px;
+    }
+    .cap-card-icon svg { width: 26px; height: 26px; }
+    .cap-card h3 { font-family: 'Manrope', 'Segoe UI', sans-serif; font-size: 20px; font-weight: 900; color: #1b1b1d; margin-bottom: 10px; }
+    .cap-card p { font-size: 14px; line-height: 1.75; color: #44474d; }
+
+    /* ═════════════════════════════════════
        RESPONSIVE NAV
        ═════════════════════════════════════ */
     @media (min-width: 768px) {
@@ -866,23 +894,23 @@
         <span class="sec-label">Technical Expertise</span>
         <h2>World-Class Core Technology Team</h2>
         <div class="divider" style="margin-left:auto;margin-right:auto;"></div>
-        <p>Core members hail from leading global tech enterprises, with deep expertise in cloud computing architecture, distributed computing scheduling, cross-regional networking, and data security operations.</p>
+        <p>Core members hail from global top-tier technology enterprises, with deep expertise in cloud computing architecture, distributed computing scheduling, cross-regional networking, and data security governance. The team has accumulated extensive hands-on project experience across multiple Southeast Asian markets.</p>
       </div>
       <div class="grid-3" style="max-width:900px;margin:0 auto;">
         <div class="tech-card">
           <div class="tech-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 1v4M15 1v4M1 9h22M9 15h6"/></svg></div>
-          <h4>1,000+ GPU Cluster Proven Experience</h4>
-          <p>Full-cycle hands-on experience from hardware integration to production optimization at the 1,000-GPU scale — delivering stable computing power for high-load scenarios like large model training.</p>
+          <h4>Ten-Thousand-GPU Cluster Proven Experience</h4>
+          <p>The core team possesses complete hands-on experience in ten-thousand-GPU cluster deployment — from hardware integration to production optimization, with large-scale computing delivery projects across multiple Southeast Asian markets — providing stable computing support for high-load scenarios such as foundation model training.</p>
         </div>
         <div class="tech-card">
           <div class="tech-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
           <h4>Proprietary Computing Scheduling Engine</h4>
-          <p>Self-developed computing orchestration and scheduling system that effectively boosts GPU utilization, reduces idle overhead, and dynamically allocates resources — continuously driving down costs and boosting throughput for clients.</p>
+          <p>Self-developed computing orchestration and scheduling system, deployed and validated across multiple data centers in Southeast Asia — effectively improving GPU utilization, reducing idle waste, and dynamically allocating resources to continuously reduce costs and increase throughput for clients.</p>
         </div>
         <div class="tech-card">
           <div class="tech-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/><path d="M9 12l2 2 4-4"/></svg></div>
-          <h4>24×7 Technical Delivery &amp; Operations Assurance</h4>
-          <p>Deep proficiency in cross-border equipment compliance and overseas data center operations standards, with multi-country data center build-out experience in Thailand and Malaysia — rapid cross-timezone response ensuring zero business interruption.</p>
+          <h4>24×7 Technical Delivery &amp; Assurance</h4>
+          <p>The core team has deeply participated in computing project delivery across multiple Southeast Asian markets, with in-depth knowledge of local compliance and operational standards — enabling cross-timezone rapid response and ensuring uninterrupted business operations.</p>
         </div>
       </div>
     </div>
@@ -896,18 +924,26 @@
       <div class="cap-header">
         <div class="sec-head" style="margin-bottom:0;">
           <span class="sec-label">Capital Strength</span>
-          <h2>Capital Strength &amp; Financial Advantages</h2>
+          <h2>Capital Strength &amp; Financial Advantage</h2>
           <div class="divider"></div>
-          <p>Backed by a deep-tech industry fund with ample capital reserves, possessing the capacity for sustained, large-scale computing infrastructure expansion.</p>
+          <p>Integrating premium industry resources and institutional partnerships, with the capability to sustain large-scale computing service delivery.</p>
         </div>
         <div class="cap-badge">
           <svg viewBox="0 0 24 24" fill="none" stroke="#0058bc" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg>
-          <span>Deep-Tech Fund Backed</span>
+          <span>Institutional Partnerships</span>
         </div>
       </div>
-      <div class="grid-2">
-        <div class="card card-num"><div class="num">01</div><h3>Abundant Capital Reserves</h3><p>Funded by a deep-tech industry fund with sufficient capital — capable of supporting continuous, large-scale GPU procurement and data center expansion.</p><svg class="card-bg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="12" r="10"/><path d="M12 6v12M8 10h8M8 14h8"/></svg></div>
-        <div class="card card-num"><div class="num">02</div><h3>Professional Capital Management Team</h3><p>Core leadership with primary market investment, cross-border capital operations, and offshore structure management experience — adept at refining tech business models and valuation frameworks.</p><svg class="card-bg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
+      <div class="cap-grid">
+        <div class="cap-card">
+          <div class="cap-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0058bc" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg></div>
+          <h3>Deep Experience in Major Financial Institution Partnerships</h3>
+          <p>The core team has deep roots in the Asia-Pacific market, maintaining close partnerships with major banks, financial leasing institutions, and industry funds — with extensive experience in cross-border computing project financing and structured cooperation.</p>
+        </div>
+        <div class="cap-card">
+          <div class="cap-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0058bc" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+          <h3>Focused Target Markets</h3>
+          <p>Focused on three core markets — Southeast Asia, Northeast Asia, and the Middle East — committed to becoming the most professional and trusted AI computing services partner in the region.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -941,8 +977,8 @@
   <section class="section" id="contact">
     <div class="cta-wrap">
       <div style="position:absolute;right:-20px;top:-20px;opacity:0.05;pointer-events:none;"><svg width="180" height="180" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="0.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h4M18 12h4M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg></div>
-      <h2>Ready to Scale Your AI Ambition?</h2>
-      <p>Whether you're an enterprise needing computing infrastructure, a partner seeking technical collaboration, or an investor focused on the AI infrastructure sector — we look forward to connecting with you.</p>
+      <h2>Building the Future Together</h2>
+      <p>Whether you are an enterprise in need of computing services, a partner seeking technical collaboration, or an investor focused on the AI computing sector — we look forward to connecting with you.</p>
       <div class="cta-cards">
         <a href="mailto:apexarbor@apexarbor.ai" class="cta-card cta-email">
           <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M2 5l10 7 10-7"/></svg>
@@ -963,11 +999,11 @@
     <div class="footer-inner">
       <div class="footer-brand">
         <img src="images/apex-logo-blue.png" alt="Apex Arbor">
-        <p>A Southeast Asia-focused AI computing services provider — dedicated to building Asia-Pacific computing hubs, delivering top-tier global AI computing infrastructure through high-end GPU clusters and cloud computing services.</p>
+        <p>A global, capitalization-ready AI computing services provider — delivering professional computing services across the Asia-Pacific region with enterprise-grade governance standards.</p>
       </div>
-      <div class="footer-col"><h5>Company</h5><ul><li><a href="#hero">About Us</a></li><li><a href="#business">Core Business</a></li><li><a href="#technology">Technology</a></li><li><a href="#global">Global Presence</a></li></ul></div>
-      <div class="footer-col"><h5>Services</h5><ul><li><a href="#business">GPU Clusters</a></li><li><a href="#business">Data Centers</a></li><li><a href="#business">Cloud Services</a></li><li><a href="#capital">Capital Strength</a></li></ul></div>
-      <div class="footer-col"><h5>Contact</h5><ul><li><a href="mailto:apexarbor@apexarbor.ai">apexarbor@apexarbor.ai</a></li><li style="color:#64748b;font-size:13px;">Room 3403, The Ninth Tower Building A, 34th Floor, Rama 9 Road, Huaykwang Sub-District, Huaykwang District, Bangkok, Thailand</li><li style="color:#64748b;font-size:13px;">Singapore (HQ)</li></ul></div>
+      <div class="footer-col"><h5>Company</h5><ul><li><a href="#hero">About Us</a></li><li><a href="#technology">Technology Team</a></li><li><a href="#global">Global Presence</a></li></ul></div>
+      <div class="footer-col"><h5>Services</h5><ul><li><a href="#business">GPU Computing</a></li><li><a href="#business">Cloud Computing</a></li><li><a href="#business">Industry Solutions</a></li><li><a href="#business">24×7 Support</a></li></ul></div>
+      <div class="footer-col"><h5>Contact</h5><ul><li><a href="mailto:apexarbor@apexarbor.ai">apexarbor@apexarbor.ai</a></li></ul></div>
     </div>
     <div class="footer-bot">&copy; 2025 Apex Arbor Holding Limited. All rights reserved.</div>
   </footer>
