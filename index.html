@@ -1,613 +1,1007 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="scroll-smooth" lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta name="description" content="Apex Arbor — Southeast Asia's Premier AI Computing Infrastructure Partner">
-  <title>Apex Arbor | Powering the AI Era</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/design-system.css">
-  <link rel="stylesheet" href="css/nav.css">
-  <link rel="stylesheet" href="css/hero.css">
-  <link rel="stylesheet" href="css/global.css">
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="Apex Arbor — Southeast Asia's Premier AI Computing Infrastructure Partner" name="description">
+<title>Apex Arbor | Powering the AI Era</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,0&amp;display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        primary: "#0d2237",
+        "primary-container": "#0d2237",
+        "on-primary": "#ffffff",
+        "on-primary-container": "#768aa3",
+        "primary-fixed": "#d1e4ff",
+        "primary-fixed-dim": "#b4c8e4",
+        "on-primary-fixed": "#071d31",
+        secondary: "#4a607c",
+        "secondary-container": "#c8dfff",
+        "on-secondary": "#ffffff",
+        "on-secondary-container": "#4c627e",
+        surface: "#f7f9fb",
+        "surface-container": "#eceef0",
+        "surface-container-low": "#f2f4f6",
+        "surface-container-highest": "#e0e3e5",
+        "on-surface": "#191c1e",
+        "on-surface-variant": "#43474d",
+        outline: "#74777d",
+        "outline-variant": "#c4c6cd",
+        background: "#f7f9fb",
+        "on-background": "#191c1e",
+        error: "#ba1a1a",
+        "on-error": "#ffffff",
+        "error-container": "#ffdad6",
+        "on-error-container": "#93000a",
+        "surface-dim": "#d8dadc",
+        "surface-bright": "#f7f9fb",
+        "surface-container-lowest": "#ffffff",
+        "surface-container-high": "#e6e8ea",
+        "surface-tint": "#4d6078",
+        "inverse-surface": "#2d3133",
+        "inverse-on-surface": "#eff1f3",
+        "inverse-primary": "#b4c8e4",
+        tertiary: "#000c10",
+        "on-tertiary": "#ffffff",
+        "tertiary-container": "#00252d",
+        "on-tertiary-container": "#3b93a8",
+        "tertiary-fixed": "#abedff",
+        "tertiary-fixed-dim": "#7fd2e8",
+        "on-tertiary-fixed": "#001f26",
+        "on-tertiary-fixed-variant": "#004e5c",
+        "secondary-fixed": "#d2e4ff",
+        "secondary-fixed-dim": "#b2c8e8",
+        "on-secondary-fixed": "#021d35",
+        "on-secondary-fixed-variant": "#324863",
+        "on-primary-fixed-variant": "#35485f",
+        "surface-variant": "#e0e3e5"
+      },
+      borderRadius: {
+        DEFAULT: "0.125rem",
+        lg: "0.25rem",
+        xl: "0.5rem",
+        "2xl": "0.75rem",
+        full: "9999px"
+      },
+      spacing: {
+        "container-max": "1280px",
+        "section-padding-md": "80px",
+        gutter: "24px",
+        "section-padding-lg": "120px",
+        "margin-mobile": "20px"
+      },
+      fontFamily: {
+        sans: ["Hanken Grotesk"],
+        display: ["Plus Jakarta Sans", "Hanken Grotesk"],
+        mono: ["JetBrains Mono"]
+      },
+      fontSize: {
+        "display-lg": ["96px", { lineHeight: "1.0", letterSpacing: "-0.02em", fontWeight: "700" }],
+        "headline-lg": ["72px", { lineHeight: "1.1", fontWeight: "700", letterSpacing: "-0.02em", fontFamily: "'Plus Jakarta Sans'" }],
+        "headline-md": ["40px", { lineHeight: "1.2", fontWeight: "700", letterSpacing: "-0.01em", fontFamily: "'Plus Jakarta Sans'" }],
+        "headline-sm": ["20px", { lineHeight: "28px", fontWeight: "500" }],
+        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+        "body-sm": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+        "label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.05em", fontWeight: "500" }],
+        "label-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "500" }]
+      }
+    }
+  }
+}
+</script>
+<style>
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  display: inline-block;
+  vertical-align: middle;
+}
+/* Carousel tab styles */
+</style>
 </head>
-<body>
-  <!-- ANNOUNCEMENT BAR -->
-  <div class="announcement-bar" data-reveal="fade-down">
-    <div class="container announcement-content">
-      <span class="announcement-badge">New</span>
-      <p class="announcement-text">Apex Arbor achieves 96% cluster utilization with self-developed scheduling system</p>
-      <a href="#why-us" class="announcement-link">
-        Learn More
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M5 12h14M12 5l7 7-7 7"/>
-        </svg>
-      </a>
-    </div>
-  </div>
+<body class="bg-background text-on-background font-sans selection:bg-primary-fixed selection:text-on-primary-fixed">
 
-  <!-- NAVBAR -->
-  <nav id="navbar" class="navbar">
-    <div class="container nav-inner">
-      <a href="/" class="nav-logo">Apex Arbor</a>
-      <div class="nav-menu">
-        <ul class="nav-links">
-          <li class="nav-item has-dropdown">
-            <a href="#platform" class="nav-link">Platform</a>
-            <ul class="dropdown">
-<li><a href="#platform">AI Cloud Platform</a></li>
-              <li><a href="#products">GPU Compute</a></li>
-              <li><a href="#products">CPU Compute</a></li>
-              <li><a href="#products">Bare Metal</a></li>
-            </ul>
-          </li>
-          <li class="nav-item has-dropdown">
-            <a href="#products" class="nav-link">Products</a>
-            <ul class="dropdown">
-              <li><a href="#products">NVIDIA Blackwell</a></li>
-              <li><a href="#products">NVIDIA Hopper</a></li>
-              <li><a href="#products">NVIDIA Ada</a></li>
-              <li><a href="#products">Networking</a></li>
-            </ul>
-          </li>
-          <li class="nav-item"><a href="#why-us" class="nav-link">Why Us</a></li>
-          <li class="nav-item"><a href="#global" class="nav-link">Global</a></li>
-          <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
-        </ul>
-      </div>
-      <a href="#contact" class="btn btn-primary nav-cta">Get Started</a>
-      <button class="menu-btn" aria-label="Toggle menu">
-        <span class="hamburger"></span>
+<!-- ANNOUNCEMENT BAR -->
+<div class="bg-primary text-on-primary py-2 text-center relative overflow-hidden">
+  <div class="max-w-container-max mx-auto px-gutter flex items-center justify-center gap-3 text-sm">
+    <span class="font-mono text-[10px] font-bold bg-primary-fixed text-on-primary-fixed px-2 py-0.5 rounded uppercase tracking-wider">New</span>
+    <p class="font-body-sm text-on-primary/80">Apex Arbor achieves 96% cluster utilization with self-developed scheduling system</p>
+    <a href="#why-us" class="font-mono text-[11px] text-primary-fixed hover:text-on-primary transition-colors flex items-center gap-1 uppercase tracking-wider">
+      Learn More
+      <span class="material-symbols-outlined text-sm">arrow_forward</span>
+    </a>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<header class="fixed top-0 w-full z-50 bg-background transition-all duration-300" id="navbar">
+  <nav class="flex justify-between items-center max-w-container-max mx-auto h-20 transition-all duration-300 px-gutter">
+    <a href="#hero" class="flex items-center gap-2">
+      <img src="images/APEX_logo.png" alt="Apex Arbor" class="h-12 w-auto">
+    </a>
+    <div class="hidden md:flex items-center space-x-8" id="navMenu">
+      <a href="#platform" class="font-mono text-label-md text-secondary hover:text-primary transition-colors duration-300">Platform</a>
+      <a href="#products" class="font-mono text-label-md text-secondary hover:text-primary transition-colors duration-300">Products</a>
+      <a href="#why-us" class="font-mono text-label-md text-secondary hover:text-primary transition-colors duration-300">Why Us</a>
+      <a href="#global" class="font-mono text-label-md text-secondary hover:text-primary transition-colors duration-300">Global</a>
+      <a href="#contact" class="font-mono text-label-md text-secondary hover:text-primary transition-colors duration-300">Contact</a>
+    </div>
+    <div class="flex items-center gap-4">
+      <a href="#contact" class="hidden sm:inline-flex bg-primary text-on-primary px-6 py-3 rounded-lg font-mono text-label-md hover:opacity-90 transition-all duration-200">Contact Us</a>
+      <button class="md:hidden flex flex-col gap-1.5 p-2" id="menuBtn" aria-label="Toggle menu">
+        <span class="block w-6 h-0.5 bg-primary transition-all"></span>
+        <span class="block w-6 h-0.5 bg-primary transition-all"></span>
+        <span class="block w-6 h-0.5 bg-primary transition-all"></span>
       </button>
     </div>
   </nav>
+</header>
 
-  <!-- HERO SECTION -->
-  <section class="hero">
-    <!-- Video Background -->
-    <div class="hero-video-bg">
-      <video autoplay muted loop playsinline class="hero-video">
-        <source src="https://assets.mixkit.co/videos/preview/mixkit-abstract-technology-network-grid-animation-32845-large.mp4" type="video/mp4">
-      </video>
-      <div class="hero-video-overlay"></div>
-    </div>
-    
-    <!-- Animated Grid Background -->
-    <div class="hero-bg"></div>
-    <div class="hero-gradient"></div>
-    
-    <!-- Particle Overlay -->
-    <div class="hero-particles" id="heroParticles"></div>
-    
-    <!-- Hero Carousel -->
-    <div class="hero-carousel">
-      <div class="carousel-container">
-        <div class="carousel-slides">
-          <!-- Slide 1 -->
-          <div class="carousel-slide active">
-            <div class="container hero-content">
-              <span class="hero-badge">Southeast Asia's AI Computing Partner</span>
-              <h1 class="hero-title">
-                Powering the <span class="gradient-text">AI Era</span>
-              </h1>
-              <p class="hero-subtitle">
-                High-Performance GPU Cloud — NVIDIA Blackwell & Hopper Architecture
-              </p>
-              <div class="hero-buttons">
-                <a href="#contact" class="btn btn-primary">Get Computing Solution</a>
-                <a href="#platform" class="btn btn-secondary">Explore Platform</a>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Slide 2 -->
-          <div class="carousel-slide">
-            <div class="container hero-content">
-              <span class="hero-badge">NVIDIA Blackwell & Hopper Architecture</span>
-              <h1 class="hero-title">
-                High-Performance <span class="gradient-text">GPU Cloud</span>
-              </h1>
-              <p class="hero-subtitle">
-                Access the latest NVIDIA GPUs with breakthrough price performance for AI training and inference workloads.
-              </p>
-              <div class="hero-buttons">
-                <a href="#products" class="btn btn-primary">View GPU Options</a>
-                <a href="#why-us" class="btn btn-secondary">Why Choose Us</a>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Slide 3 -->
-          <div class="carousel-slide">
-            <div class="container hero-content">
-              <span class="hero-badge">Trusted by Industry Leaders</span>
-              <h1 class="hero-title">
-                Enterprise-Grade <span class="gradient-text">AI Infrastructure</span>
-              </h1>
-              <p class="hero-subtitle">
-                Deep local knowledge across Southeast Asia with multinational compliance and 24/7 technical support.
-              </p>
-              <div class="hero-buttons">
-                <a href="#global" class="btn btn-primary">Our Locations</a>
-                <a href="#contact" class="btn btn-secondary">Partner With Us</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Carousel Controls -->
-        <button class="carousel-control prev" aria-label="Previous slide">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M15 18l-6-6 6-6"/>
-          </svg>
-        </button>
-        <button class="carousel-control next" aria-label="Next slide">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M9 18l6-6-6-6"/>
-          </svg>
-        </button>
-        
-        <!-- Carousel Indicators -->
-        <div class="carousel-indicators">
-          <button class="indicator active" data-slide="0" aria-label="Go to slide 1"></button>
-          <button class="indicator" data-slide="1" aria-label="Go to slide 2"></button>
-          <button class="indicator" data-slide="2" aria-label="Go to slide 3"></button>
-        </div>
-      </div>
-    </div>
-  </section>
+<main class="pt-20">
 
-  <!-- STATS BAR -->
-  <div class="stats-bar">
-    <div class="container">
-      <div class="stats-grid">
-        <div class="stat-item">
-          <h3 class="stat-number">3</h3>
-          <p class="stat-label">Regional Offices</p>
+<!-- HERO SECTION with Carousel -->
+<section class="relative h-[60vh] min-h-[500px] flex flex-col overflow-hidden" id="hero">
+  <canvas id="tech-fluid-bg" class="absolute inset-0 w-full h-full pointer-events-none" style="z-index:0"></canvas>
+  <div class="flex-1 flex flex-col w-full max-w-container-max mx-auto px-gutter">
+    <div class="flex-1 flex flex-col justify-center">
+      <!-- Slide 1 -->
+      <div class="carousel-slide active" data-index="0">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="z-10">
+              <span class="font-mono text-[12px] font-bold text-primary-fixed-dim bg-primary-container px-3 py-1 rounded-full mb-6 inline-block uppercase tracking-wider">Southeast Asia's AI Computing Partner</span>
+              <h1 class="text-display-lg text-primary mb-6">
+                Powering the <span class="text-secondary">AI Era</span>
+              </h1>
+              <p class="text-body-lg text-secondary mb-10 max-w-lg">High-Performance GPU Cloud — NVIDIA Blackwell & Hopper Architecture</p>
+            </div>
+            <div class="relative h-[400px] lg:h-[600px] w-full rounded-2xl overflow-hidden shadow-2xl">
+              <img alt="AI computing infrastructure" class="w-full h-full object-cover" src="images/hero-bg-new.png" onerror="this.src='images/hero-bg.png'">
+            </div>
+          </div>
         </div>
-        <div class="stat-item">
-          <h3 class="stat-number">24/7</h3>
-          <p class="stat-label">Infrastructure Operations</p>
+        <!-- Slide 2 -->
+        <div class="carousel-slide hidden" data-index="1">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="z-10">
+              <span class="font-mono text-[12px] font-bold text-primary-fixed-dim bg-primary-container px-3 py-1 rounded-full mb-6 inline-block uppercase tracking-wider">NVIDIA Blackwell & Hopper Architecture</span>
+              <h1 class="text-display-lg text-primary mb-6">
+                High-Performance <span class="text-secondary">GPU Cloud</span>
+              </h1>
+              <p class="text-body-lg text-secondary mb-10 max-w-lg">Access the latest NVIDIA GPUs with breakthrough price performance for AI training and inference workloads.</p>
+            </div>
+            <div class="relative h-[400px] lg:h-[600px] w-full rounded-2xl overflow-hidden shadow-2xl">
+              <img alt="NVIDIA GPU Cloud" class="w-full h-full object-cover" src="images/GPU_Cloud.png">
+            </div>
+          </div>
         </div>
-        <div class="stat-item">
-          <h3 class="stat-number">10K+</h3>
-          <p class="stat-label">GPU Cluster Experience</p>
+        <!-- Slide 3 -->
+        <div class="carousel-slide hidden" data-index="2">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="z-10">
+              <span class="font-mono text-[12px] font-bold text-primary-fixed-dim bg-primary-container px-3 py-1 rounded-full mb-6 inline-block uppercase tracking-wider">Trusted by Industry Leaders</span>
+              <h1 class="text-display-lg text-primary mb-6">
+                Enterprise-Grade <span class="text-secondary">AI Infrastructure</span>
+              </h1>
+              <p class="text-body-lg text-secondary mb-10 max-w-lg">Deep local knowledge across Southeast Asia with multinational compliance and 24/7 technical support.</p>
+            </div>
+            <div class="relative h-[400px] lg:h-[600px] w-full rounded-2xl overflow-hidden shadow-2xl">
+              <img alt="Enterprise infrastructure" class="w-full h-full object-cover" src="images/screenshot-1781388681113.png">
+            </div>
+          </div>
         </div>
-        <div class="stat-item">
-          <h3 class="stat-number">96%</h3>
-          <p class="stat-label">Cluster Utilization</p>
+        </div>
+        </div>
+        <!-- Tab Switches -->
+  <div class="w-full border-t border-outline-variant/30">
+    <div class="flex w-full max-w-container-max mx-auto">
+      <button class="carousel-tab active flex-1 flex flex-col items-center justify-center gap-1 py-4 font-mono transition-all cursor-pointer"
+                data-slide="0">
+          <span class="text-[10px] uppercase tracking-widest opacity-60 leading-none">CLOUD</span>
+          <span class="text-[13px] font-bold leading-tight">AI Cloud</span>
+        </button>
+      <button class="carousel-tab flex-1 flex flex-col items-center justify-center gap-1 py-4 font-mono transition-all cursor-pointer"
+                data-slide="1">
+          <span class="text-[10px] uppercase tracking-widest opacity-40 leading-none">GPU</span>
+          <span class="text-[13px] font-bold leading-tight">GPU Solutions</span>
+        </button>
+      <button class="carousel-tab flex-1 flex flex-col items-center justify-center gap-1 py-4 font-mono transition-all cursor-pointer"
+                data-slide="2">
+          <span class="text-[10px] uppercase tracking-widest opacity-40 leading-none">NETWORK</span>
+          <span class="text-[13px] font-bold leading-tight">Global Network</span>
+        </button>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<section class="bg-[#0A1628] py-12 text-on-primary">
+  <div class="max-w-container-max mx-auto px-gutter grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+    <div>
+      <div class="text-headline-lg mb-1">3</div>
+      <div class="font-mono text-[11px] uppercase tracking-widest opacity-70">Regional Offices</div>
+    </div>
+    <div>
+      <div class="text-headline-lg mb-1">24/7</div>
+      <div class="font-mono text-[11px] uppercase tracking-widest opacity-70">Infrastructure Operations</div>
+    </div>
+    <div>
+      <div class="text-headline-lg mb-1">10K+</div>
+      <div class="font-mono text-[11px] uppercase tracking-widest opacity-70">GPU Cluster Experience</div>
+    </div>
+    <div>
+      <div class="text-headline-lg mb-1">96%</div>
+      <div class="font-mono text-[11px] uppercase tracking-widest opacity-70">Cluster Utilization</div>
+    </div>
+  </div>
+</section>
+
+<!-- CUSTOMER LOGO SCROLL -->
+<section class="bg-surface-container py-12 overflow-hidden">
+  <div class="max-w-container-max mx-auto px-gutter">
+    <div class="flex overflow-hidden">
+      <div class="flex gap-16 animate-scroll min-w-full" id="logoScroll">
+        <div class="flex items-center gap-16 shrink-0">
+          <span class="font-sans text-lg text-on-surface-variant font-semibold tracking-tight whitespace-nowrap">TechCorp</span>
+          <span class="font-sans text-lg text-on-surface-variant font-semibold tracking-tight whitespace-nowrap">AI Labs</span>
+          <span class="font-sans text-lg text-on-surface-variant font-semibold tracking-tight whitespace-nowrap">DataFlow</span>
+          <span class="font-sans text-lg text-on-surface-variant font-semibold tracking-tight whitespace-nowrap">CloudScale</span>
+          <span class="font-sans text-lg text-on-surface-variant font-semibold tracking-tight whitespace-nowrap">NeuralNet</span>
+          <span class="font-sans text-lg text-on-surface-variant font-semibold tracking-tight whitespace-nowrap">QuantumAI</span>
+        </div>
+        <div class="flex items-center gap-16 shrink-0" aria-hidden="true">
+          <span class="font-sans text-lg text-on-surface-variant font-semibold tracking-tight whitespace-nowrap">TechCorp</span>
+          <span class="font-sans text-lg text-on-surface-variant font-semibold tracking-tight whitespace-nowrap">AI Labs</span>
+          <span class="font-sans text-lg text-on-surface-variant font-semibold tracking-tight whitespace-nowrap">DataFlow</span>
+          <span class="font-sans text-lg text-on-surface-variant font-semibold tracking-tight whitespace-nowrap">CloudScale</span>
+          <span class="font-sans text-lg text-on-surface-variant font-semibold tracking-tight whitespace-nowrap">NeuralNet</span>
+          <span class="font-sans text-lg text-on-surface-variant font-semibold tracking-tight whitespace-nowrap">QuantumAI</span>
         </div>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- CUSTOMER LOGO SCROLL SECTION -->
-  <section class="logo-section">
-    <div class="logo-scroll-container">
-      <div class="logo-scroll-track">
-        <!-- Original logos -->
-        <div class="logo-item">
-          <span class="logo-text">TechCorp</span>
+<!-- PLATFORM SECTION -->
+<section class="bg-surface py-section-padding-lg" id="platform">
+  <div class="max-w-container-max mx-auto px-gutter">
+    <div class="text-center mb-16 max-w-3xl mx-auto">
+      <span class="font-mono text-[12px] text-secondary mb-4 block uppercase tracking-widest font-bold">Platform</span>
+      <h2 class="text-headline-lg text-primary mb-8">AI Cloud Platform</h2>
+      <p class="text-body-lg text-secondary">A modern cloud built for AI workloads — delivering breakthrough price performance for training and inference.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="bg-white p-10 rounded-xl shadow-sm border border-outline/5 hover:shadow-md transition-shadow">
+        <div class="flex items-center gap-4 mb-6">
+          <span class="material-symbols-outlined text-[#4a607c] text-3xl">bolt</span>
+          <h3 class="text-headline-md text-primary">High Performance</h3>
         </div>
-        <div class="logo-item">
-          <span class="logo-text">AI Labs</span>
+        <p class="text-body-md text-secondary">Industry-leading GPU utilization with InfiniBand networking and bare metal performance.</p>
+      </div>
+      <div class="bg-white p-10 rounded-xl shadow-sm border border-outline/5 hover:shadow-md transition-shadow">
+        <div class="flex items-center gap-4 mb-6">
+          <span class="material-symbols-outlined text-[#4a607c] text-3xl">target</span>
+           <h3 class="text-headline-md text-primary">AI-Optimized</h3>
         </div>
-        <div class="logo-item">
-          <span class="logo-text">DataFlow</span>
+        <p class="text-body-md text-secondary">Purpose-built infrastructure for large model training, fine-tuning, and inference workloads.</p>
+      </div>
+      <div class="bg-white p-10 rounded-xl shadow-sm border border-outline/5 hover:shadow-md transition-shadow">
+        <div class="flex items-center gap-4 mb-6">
+          <span class="material-symbols-outlined text-[#4a607c] text-3xl">savings</span>
+          <h3 class="text-headline-md text-primary">Cost Efficient</h3>
         </div>
-        <div class="logo-item">
-          <span class="logo-text">CloudScale</span>
+        <p class="text-body-md text-secondary">Up to 80% cost reduction compared to general-purpose clouds for AI workloads.</p>
+      </div>
+      <div class="bg-white p-10 rounded-xl shadow-sm border border-outline/5 hover:shadow-md transition-shadow">
+        <div class="flex items-center gap-4 mb-6">
+          <span class="material-symbols-outlined text-[#4a607c] text-3xl">rocket_launch</span>
+          <h3 class="text-headline-md text-primary">Rapid Deployment</h3>
         </div>
-        <div class="logo-item">
-          <span class="logo-text">NeuralNet</span>
-        </div>
-        <div class="logo-item">
-          <span class="logo-text">QuantumAI</span>
-        </div>
-        <!-- Duplicated for seamless loop -->
-        <div class="logo-item">
-          <span class="logo-text">TechCorp</span>
-        </div>
-        <div class="logo-item">
-          <span class="logo-text">AI Labs</span>
-        </div>
-        <div class="logo-item">
-          <span class="logo-text">DataFlow</span>
-        </div>
-        <div class="logo-item">
-          <span class="logo-text">CloudScale</span>
-        </div>
-        <div class="logo-item">
-          <span class="logo-text">NeuralNet</span>
-        </div>
-        <div class="logo-item">
-          <span class="logo-text">QuantumAI</span>
-        </div>
+        <p class="text-body-md text-secondary">From provisioning to production in hours, not weeks — with on-demand scaling.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- PLATFORM SECTION -->
-  <section id="platform" class="section platform-section">
-    <div class="container">
-      <div class="section-header" data-reveal="fade-up">
-        <span class="section-tag">PLATFORM</span>
-        <h2>AI Cloud Platform</h2>
-        <p>A modern cloud built for AI workloads — delivering breakthrough price performance for training and inference.</p>
+<!-- PRODUCTS SECTION -->
+<section class="bg-primary-container py-section-padding-lg text-on-primary" id="products">
+  <div class="max-w-container-max mx-auto px-gutter">
+    <div class="text-center mb-16 max-w-3xl mx-auto">
+      <span class="font-mono text-[12px] text-on-primary-container mb-4 block uppercase tracking-widest font-bold">Products</span>
+      <h2 class="text-headline-lg mb-8">Compute Infrastructure</h2>
+      <p class="text-body-lg text-on-primary-container">Access the latest NVIDIA GPUs and networking technology for your most demanding AI workloads.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- NVIDIA Blackwell -->
+      <div class="bg-[#1a3450] p-8 rounded-xl product-card-hover border border-white/15">
+        <div class="flex justify-between items-start mb-6">
+          <span class="material-symbols-outlined text-primary-fixed text-4xl">memory</span>
+          <span class="font-mono bg-primary-fixed text-on-primary-fixed text-[10px] px-2 py-1 rounded font-bold uppercase">Latest</span>
+        </div>
+        <h3 class="text-headline-md mb-4">NVIDIA Blackwell</h3>
+        <p class="text-body-md text-on-primary-container mb-8">Next-generation GPU architecture for trillion-parameter models</p>
+        <ul class="space-y-3 mb-0">
+          <li class="flex items-center gap-3 font-mono text-[13px]">
+            <span class="material-symbols-outlined text-primary-fixed text-sm">check_circle</span> B200, GB200 GPUs
+          </li>
+          <li class="flex items-center gap-3 font-mono text-[13px]">
+            <span class="material-symbols-outlined text-primary-fixed text-sm">check_circle</span> 192GB HBM3e memory
+          </li>
+          <li class="flex items-center gap-3 font-mono text-[13px]">
+            <span class="material-symbols-outlined text-primary-fixed text-sm">check_circle</span> 8TB/s memory bandwidth
+          </li>
+          <li class="flex items-center gap-3 font-mono text-[13px]">
+            <span class="material-symbols-outlined text-primary-fixed text-sm">check_circle</span> FP4, FP8 precision
+          </li>
+        </ul>
       </div>
-      <div class="platform-grid stagger-grid">
-        <div class="platform-card" data-reveal="scale-in">
-          <div class="platform-icon">⚡</div>
-          <h3>High Performance</h3>
-          <p>Industry-leading GPU utilization with InfiniBand networking and bare metal performance.</p>
+      <!-- NVIDIA Hopper -->
+      <div class="bg-[#1a3450] p-8 rounded-xl product-card-hover border border-white/15">
+        <div class="flex justify-between items-start mb-6">
+          <span class="material-symbols-outlined text-primary-fixed text-4xl">dynamic_feed</span>
         </div>
-        <div class="platform-card" data-reveal="scale-in">
-          <div class="platform-icon">🎯</div>
-          <h3>AI-Optimized</h3>
-          <p>Purpose-built infrastructure for large model training, fine-tuning, and inference workloads.</p>
+        <h3 class="text-headline-md mb-4">NVIDIA Hopper</h3>
+        <p class="text-body-md text-on-primary-container mb-8">Industry-leading performance for AI training and inference</p>
+        <ul class="space-y-3 mb-0">
+          <li class="flex items-center gap-3 font-mono text-[13px]">
+            <span class="material-symbols-outlined text-primary-fixed text-sm">check_circle</span> H100, H200 GPUs
+          </li>
+          <li class="flex items-center gap-3 font-mono text-[13px]">
+            <span class="material-symbols-outlined text-primary-fixed text-sm">check_circle</span> 80GB HBM3 memory
+          </li>
+          <li class="flex items-center gap-3 font-mono text-[13px]">
+            <span class="material-symbols-outlined text-primary-fixed text-sm">check_circle</span> 3.35TB/s bandwidth
+          </li>
+          <li class="flex items-center gap-3 font-mono text-[13px]">
+            <span class="material-symbols-outlined text-primary-fixed text-sm">check_circle</span> Transformer Engine
+          </li>
+        </ul>
+      </div>
+      <!-- NVIDIA Ada Lovelace -->
+      <div class="bg-[#1a3450] p-8 rounded-xl product-card-hover border border-white/15">
+        <div class="flex justify-between items-start mb-6">
+          <span class="material-symbols-outlined text-primary-fixed text-4xl">stadia_controller</span>
         </div>
-        <div class="platform-card" data-reveal="scale-in">
-          <div class="platform-icon">💰</div>
-          <h3>Cost Efficient</h3>
-          <p>Up to 80% cost reduction compared to general-purpose clouds for AI workloads.</p>
+        <h3 class="text-headline-md mb-4">NVIDIA Ada Lovelace</h3>
+        <p class="text-body-md text-on-primary-container mb-8">Efficient inference and graphics workloads</p>
+        <ul class="space-y-3 mb-0">
+          <li class="flex items-center gap-3 font-mono text-[13px]">
+            <span class="material-symbols-outlined text-primary-fixed text-sm">check_circle</span> L40S, L4 GPUs
+          </li>
+          <li class="flex items-center gap-3 font-mono text-[13px]">
+            <span class="material-symbols-outlined text-primary-fixed text-sm">check_circle</span> 48GB GDDR6 memory
+          </li>
+          <li class="flex items-center gap-3 font-mono text-[13px]">
+            <span class="material-symbols-outlined text-primary-fixed text-sm">check_circle</span> AV1 encoding
+          </li>
+          <li class="flex items-center gap-3 font-mono text-[13px]">
+            <span class="material-symbols-outlined text-primary-fixed text-sm">check_circle</span> RT cores for rendering
+          </li>
+        </ul>
+      </div>
+      <!-- CPU Compute -->
+      <div class="bg-[#1a3450] p-8 rounded-xl product-card-hover border border-white/15">
+        <div class="flex justify-between items-start mb-6">
+          <span class="material-symbols-outlined text-primary-fixed text-4xl">memory_alt</span>
         </div>
-        <div class="platform-card" data-reveal="scale-in">
-          <div class="platform-icon">🚀</div>
-          <h3>Rapid Deployment</h3>
-          <p>From provisioning to production in hours, not weeks — with on-demand scaling.</p>
+        <h3 class="text-headline-md mb-4">CPU Compute</h3>
+        <p class="text-body-md text-on-primary-container mb-8">High-performance CPUs for data preprocessing</p>
+        <ul class="space-y-3 mb-0">
+          <li class="flex items-center gap-3 font-mono text-[13px]">
+            <span class="material-symbols-outlined text-primary-fixed text-sm">check_circle</span> AMD EPYC, Intel Xeon
+          </li>
+          <li class="flex items-center gap-3 font-mono text-[13px]">
+            <span class="material-symbols-outlined text-primary-fixed text-sm">check_circle</span> Up to 128 cores
+          </li>
+          <li class="flex items-center gap-3 font-mono text-[13px]">
+            <span class="material-symbols-outlined text-primary-fixed text-sm">check_circle</span> 2TB+ RAM options
+          </li>
+          <li class="flex items-center gap-3 font-mono text-[13px]">
+            <span class="material-symbols-outlined text-primary-fixed text-sm">check_circle</span> 100GbE networking
+          </li>
+        </ul>
+      </div>
+      <!-- Bare Metal -->
+      <div class="bg-[#1a3450] p-8 rounded-xl product-card-hover border border-white/15">
+        <div class="flex justify-between items-start mb-6">
+          <span class="material-symbols-outlined text-primary-fixed text-4xl">dns</span>
         </div>
+        <h3 class="text-headline-md mb-4">Bare Metal</h3>
+        <p class="text-body-md text-on-primary-container mb-8">Dedicated servers for maximum performance</p>
+        <ul class="space-y-3 mb-0">
+          <li class="flex items-center gap-3 font-mono text-[13px]">
+            <span class="material-symbols-outlined text-primary-fixed text-sm">check_circle</span> Single-tenant hardware
+          </li>
+          <li class="flex items-center gap-3 font-mono text-[13px]">
+            <span class="material-symbols-outlined text-primary-fixed text-sm">check_circle</span> No hypervisor overhead
+          </li>
+          <li class="flex items-center gap-3 font-mono text-[13px]">
+            <span class="material-symbols-outlined text-primary-fixed text-sm">check_circle</span> Direct InfiniBand access
+          </li>
+          <li class="flex items-center gap-3 font-mono text-[13px]">
+            <span class="material-symbols-outlined text-primary-fixed text-sm">check_circle</span> Custom configurations
+          </li>
+        </ul>
+      </div>
+      <!-- Networking -->
+      <div class="bg-[#1a3450] p-8 rounded-xl product-card-hover border border-white/15">
+        <div class="flex justify-between items-start mb-6">
+          <span class="material-symbols-outlined text-primary-fixed text-4xl">lan</span>
+        </div>
+        <h3 class="text-headline-md mb-4">Networking</h3>
+        <p class="text-body-md text-on-primary-container mb-8">High-speed interconnect for distributed training</p>
+        <ul class="space-y-3 mb-0">
+          <li class="flex items-center gap-3 font-mono text-[13px]">
+            <span class="material-symbols-outlined text-primary-fixed text-sm">check_circle</span> InfiniBand NDR/XDR
+          </li>
+          <li class="flex items-center gap-3 font-mono text-[13px]">
+            <span class="material-symbols-outlined text-primary-fixed text-sm">check_circle</span> 400/800 GbE options
+          </li>
+          <li class="flex items-center gap-3 font-mono text-[13px]">
+            <span class="material-symbols-outlined text-primary-fixed text-sm">check_circle</span> RDMA support
+          </li>
+          <li class="flex items-center gap-3 font-mono text-[13px]">
+            <span class="material-symbols-outlined text-primary-fixed text-sm">check_circle</span> Sub-microsecond latency
+          </li>
+        </ul>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- PRODUCTS SECTION -->
-  <section id="products" class="section products-section">
-    <div class="container">
-      <div class="section-header" data-reveal="fade-up">
-        <span class="section-tag">PRODUCTS</span>
-        <h2>Compute Infrastructure</h2>
-        <p>Access the latest NVIDIA GPUs and networking technology for your most demanding AI workloads.</p>
+<!-- WHY US SECTION -->
+<section class="bg-surface py-section-padding-lg" id="why-us">
+  <div class="max-w-container-max mx-auto px-gutter">
+    <div class="text-center mb-16 max-w-3xl mx-auto">
+      <span class="font-mono text-[12px] text-secondary mb-4 block uppercase tracking-widest font-bold">Why Apex Arbor</span>
+      <h2 class="text-headline-lg text-primary mb-8">World-Class Expertise</h2>
+      <p class="text-body-lg text-secondary">Core members from global top-tier technology enterprises with proven track records.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+      <div class="group">
+        <div class="text-secondary text-[56px] font-bold mb-6 leading-none">10K+</div>
+        <h4 class="text-headline-md mb-4 text-primary font-bold">Ten-Thousand-GPU Scale</h4>
+        <p class="text-body-md text-secondary">Complete hands-on experience in ten-thousand-GPU cluster deployment — from hardware integration to production optimization, with large-scale computing delivery projects across multiple Southeast Asian markets.</p>
       </div>
-      <div class="products-grid stagger-grid">
-        <div class="product-card" data-reveal="scale-in">
-          <div class="product-badge">Latest</div>
-          <h3>NVIDIA Blackwell</h3>
-          <p class="product-desc">Next-generation GPU architecture for trillion-parameter models</p>
-          <ul class="product-specs">
-            <li>B200, GB200 GPUs</li>
-            <li>192GB HBM3e memory</li>
-            <li>8TB/s memory bandwidth</li>
-            <li>FP4, FP8 precision</li>
-          </ul>
-          <a href="#contact" class="btn btn-outline">Learn More</a>
-        </div>
-        <div class="product-card" data-reveal="scale-in">
-          <h3>NVIDIA Hopper</h3>
-          <p class="product-desc">Industry-leading performance for AI training and inference</p>
-          <ul class="product-specs">
-            <li>H100, H200 GPUs</li>
-            <li>80GB HBM3 memory</li>
-            <li>3.35TB/s bandwidth</li>
-            <li>Transformer Engine</li>
-          </ul>
-          <a href="#contact" class="btn btn-outline">Learn More</a>
-        </div>
-        <div class="product-card" data-reveal="scale-in">
-          <h3>NVIDIA Ada Lovelace</h3>
-          <p class="product-desc">Efficient inference and graphics workloads</p>
-          <ul class="product-specs">
-            <li>L40S, L4 GPUs</li>
-            <li>48GB GDDR6 memory</li>
-            <li>AV1 encoding</li>
-            <li>RT cores for rendering</li>
-          </ul>
-          <a href="#contact" class="btn btn-outline">Learn More</a>
-        </div>
-        <div class="product-card" data-reveal="scale-in">
-          <h3>CPU Compute</h3>
-          <p class="product-desc">High-performance CPUs for data preprocessing</p>
-          <ul class="product-specs">
-            <li>AMD EPYC, Intel Xeon</li>
-            <li>Up to 128 cores</li>
-            <li>2TB+ RAM options</li>
-            <li>100GbE networking</li>
-          </ul>
-          <a href="#contact" class="btn btn-outline">Learn More</a>
-        </div>
-        <div class="product-card" data-reveal="scale-in">
-          <h3>Bare Metal</h3>
-          <p class="product-desc">Dedicated servers for maximum performance</p>
-          <ul class="product-specs">
-            <li>Single-tenant hardware</li>
-            <li>No hypervisor overhead</li>
-            <li>Direct InfiniBand access</li>
-            <li>Custom configurations</li>
-          </ul>
-          <a href="#contact" class="btn btn-outline">Learn More</a>
-        </div>
-        <div class="product-card" data-reveal="scale-in">
-          <h3>Networking</h3>
-          <p class="product-desc">High-speed interconnect for distributed training</p>
-          <ul class="product-specs">
-            <li>InfiniBand NDR/XDR</li>
-            <li>400/800 GbE options</li>
-            <li>RDMA support</li>
-            <li>Sub-microsecond latency</li>
-          </ul>
-          <a href="#contact" class="btn btn-outline">Learn More</a>
-        </div>
+      <div class="group">
+        <div class="text-secondary text-[56px] font-bold mb-6 leading-none">96%</div>
+        <h4 class="text-headline-md mb-4 text-primary font-bold">Self-Developed Scheduling</h4>
+        <p class="text-body-md text-secondary">Self-developed computing orchestration and scheduling system, deployed and validated across multiple Southeast Asian data centers — effectively improving GPU utilization and reducing idle waste.</p>
+      </div>
+      <div class="group">
+        <div class="text-secondary text-[56px] font-bold mb-6 leading-none">24/7</div>
+        <h4 class="text-headline-md mb-4 text-primary font-bold">Technical Support</h4>
+        <p class="text-body-md text-secondary">Deep participation in computing project delivery across multiple Southeast Asian markets, with in-depth knowledge of local compliance and operational standards — enabling cross-timezone rapid response.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- WHY US SECTION -->
-  <section id="why-us" class="section why-section">
-    <div class="container">
-      <div class="section-header" data-reveal="fade-up">
-        <span class="section-tag">WHY APEX ARBOR</span>
-        <h2>World-Class Expertise</h2>
-        <p>Core members from global top-tier technology enterprises with proven track records.</p>
+<!-- WORLD-CLASS CORE TECHNOLOGY TEAM -->
+<section class="bg-surface-container py-section-padding-lg" id="technology">
+  <div class="max-w-container-max mx-auto px-gutter">
+    <div class="text-center mb-16 max-w-3xl mx-auto">
+      <span class="font-mono text-[12px] text-secondary mb-4 block uppercase tracking-widest font-bold">Technical Expertise</span>
+      <h2 class="text-headline-lg text-primary mb-8">World-Class Core Technology Team</h2>
+      <p class="text-body-lg text-secondary">Core members hail from global top-tier technology enterprises, with deep expertise in cloud computing architecture, distributed computing scheduling, cross-regional networking, and data security governance. The team has accumulated extensive hands-on project experience across multiple Southeast Asian markets.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="bg-white p-10 rounded-xl shadow-sm border border-outline/5 hover:shadow-md transition-shadow">
+        <div class="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-6">
+          <span class="material-symbols-outlined text-[#4a607c] text-3xl">dns</span>
+        </div>
+        <h3 class="text-headline-md text-primary mb-4">Ten-Thousand-GPU Cluster Practical Experience</h3>
+        <p class="text-body-md text-secondary">The core team possesses complete hands-on experience in ten-thousand-GPU cluster deployment — from hardware integration to production optimization, with large-scale computing delivery projects across multiple Southeast Asian markets — providing stable computing support for high-load scenarios such as foundation model training.</p>
       </div>
-      <div class="why-grid stagger-grid">
-        <div class="why-item" data-reveal="scale-in">
-          <div class="why-number">10K+</div>
-          <h3>Ten-Thousand-GPU Scale</h3>
-          <p>Complete hands-on experience in ten-thousand-GPU cluster deployment — from hardware integration to production optimization, with large-scale computing delivery projects across multiple Southeast Asian markets.</p>
+      <div class="bg-white p-10 rounded-xl shadow-sm border border-outline/5 hover:shadow-md transition-shadow">
+        <div class="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-6">
+          <span class="material-symbols-outlined text-[#4a607c] text-3xl">speed</span>
         </div>
-        <div class="why-item" data-reveal="scale-in">
-          <div class="why-number">96%</div>
-          <h3>Self-Developed Scheduling</h3>
-          <p>Self-developed computing orchestration and scheduling system, deployed and validated across multiple Southeast Asian data centers — effectively improving GPU utilization and reducing idle waste.</p>
+        <h3 class="text-headline-md text-primary mb-4">Self-Developed Computing Power Scheduling Engine</h3>
+        <p class="text-body-md text-secondary">Self-developed computing orchestration and scheduling system, deployed and validated across multiple data centers in Southeast Asia — effectively improving GPU utilization, reducing idle waste, and dynamically allocating resources to continuously reduce costs and increase throughput for clients.</p>
+      </div>
+      <div class="bg-white p-10 rounded-xl shadow-sm border border-outline/5 hover:shadow-md transition-shadow">
+        <div class="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-6">
+          <span class="material-symbols-outlined text-[#4a607c] text-3xl">support_agent</span>
         </div>
-        <div class="why-item" data-reveal="scale-in">
-          <div class="why-number">24/7</div>
-          <h3>Technical Support</h3>
-          <p>Deep participation in computing project delivery across multiple Southeast Asian markets, with in-depth knowledge of local compliance and operational standards — enabling cross-timezone rapid response.</p>
-        </div>
+        <h3 class="text-headline-md text-primary mb-4">24×7 Technical Delivery & Assurance</h3>
+        <p class="text-body-md text-secondary">The core team has deeply participated in computing project delivery across multiple Southeast Asian markets, with in-depth knowledge of local compliance and operational standards — enabling cross-timezone rapid response and ensuring uninterrupted business operations.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- TRUST SECTION -->
-  <section class="section trust-section">
-    <div class="container">
-      <div class="section-header" data-reveal="fade-up">
-        <span class="section-tag">TRUST CENTER</span>
-        <h2>Enterprise-Grade Security & Compliance</h2>
-        <p>Built on a foundation of security, compliance, and operational excellence.</p>
+<!-- INTERNATIONAL CAPITAL -->
+<section class="bg-surface py-section-padding-lg" id="capital">
+  <div class="max-w-container-max mx-auto px-gutter">
+    <div class="text-center mb-16 max-w-3xl mx-auto">
+      <span class="font-mono text-[12px] text-secondary mb-4 block uppercase tracking-widest font-bold">Capital Strength & Financial Advantage</span>
+      <h2 class="text-headline-lg text-primary mb-8">International Capital</h2>
+      <p class="text-body-lg text-secondary">Multiple international capital investments from Singapore, Australia, Germany and Japan.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="bg-white p-10 rounded-xl shadow-sm border border-outline/5 hover:shadow-md transition-shadow">
+        <div class="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-6">
+          <span class="material-symbols-outlined text-[#4a607c] text-3xl">account_balance</span>
+        </div>
+        <h3 class="text-headline-md text-primary mb-4">Rich Partnership Experience with Major Financial Institutions</h3>
+        <p class="text-body-md text-secondary">The core team has deep roots in the Asia-Pacific market, maintaining close partnerships with major banks, financial leasing institutions, and industry funds — with extensive experience in cross-border computing project financing and structured cooperation.</p>
       </div>
-      <div class="trust-grid stagger-grid">
-        <div class="trust-item" data-reveal="scale-in">
-          <div class="trust-icon">🔒</div>
-          <h3>Data Security</h3>
-          <p>Multi-layer security architecture with encryption at rest and in transit, isolated networks, and strict access controls.</p>
+      <div class="bg-white p-10 rounded-xl shadow-sm border border-outline/5 hover:shadow-md transition-shadow">
+        <div class="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-6">
+          <span class="material-symbols-outlined text-[#4a607c] text-3xl">travel_explore</span>
         </div>
-        <div class="trust-item" data-reveal="scale-in">
-          <div class="trust-icon">✅</div>
-          <h3>Compliance</h3>
-          <p>SOC 2 Type II, ISO 27001, GDPR compliant — meeting the highest standards for data protection and privacy.</p>
+        <h3 class="text-headline-md text-primary mb-4">Focused Target Markets</h3>
+        <p class="text-body-md text-secondary">Focused on Southeast Asia — committed to becoming the most professional and trustworthy AI computing services partner in the region.</p>
+      </div>
+      <div class="bg-white p-10 rounded-xl shadow-sm border border-outline/5 hover:shadow-md transition-shadow">
+        <div class="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-6">
+          <span class="material-symbols-outlined text-[#4a607c] text-3xl">cloud_queue</span>
         </div>
-        <div class="trust-item" data-reveal="scale-in">
-          <div class="trust-icon">🌐</div>
-          <h3>Regional Compliance</h3>
-          <p>Deep understanding of local regulations across Southeast Asia — PDPA, data sovereignty, and cross-border transfer compliance.</p>
-        </div>
-        <div class="trust-item" data-reveal="scale-in">
-          <div class="trust-icon">📊</div>
-          <h3>99.9% SLA</h3>
-          <p>Industry-leading uptime guarantee with redundant infrastructure, proactive monitoring, and rapid incident response.</p>
-        </div>
+        <h3 class="text-headline-md text-primary mb-4">Large-Scale Computing Service Delivery</h3>
+        <p class="text-body-md text-secondary">Integrating premium industry resources and institutional partnerships, with the capability to sustain large-scale computing service delivery.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- NEWS/BLOG SECTION -->
-  <section class="section news-section">
-    <div class="container">
-      <div class="section-header" data-reveal="fade-up">
-        <span class="section-tag">INSIGHTS</span>
-        <h2>Latest News</h2>
-        <p>Stay updated with our latest announcements, partnerships, and technology innovations.</p>
+<!-- TRUST SECTION -->
+<section class="bg-surface-container py-section-padding-lg">
+  <div class="max-w-container-max mx-auto px-gutter">
+    <div class="text-center mb-16 max-w-3xl mx-auto">
+      <span class="font-mono text-[12px] text-secondary mb-4 block uppercase tracking-widest font-bold">Trust Center</span>
+      <h2 class="text-headline-lg text-primary mb-8">Enterprise-Grade Security & Compliance</h2>
+      <p class="text-body-lg text-secondary">Built on a foundation of security, compliance, and operational excellence.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="bg-white p-8 rounded-xl shadow-sm border border-outline/5 flex flex-col">
+        <div class="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-6">
+          <span class="material-symbols-outlined text-[#4a607c] text-3xl">lock</span>
+        </div>
+        <h4 class="text-headline-md text-primary mb-3 min-h-[3em]">Data Security</h4>
+        <p class="text-body-md text-secondary flex-1">Multi-layer security architecture with encryption at rest and in transit, isolated networks, and strict access controls.</p>
       </div>
-      <div class="news-grid stagger-grid">
-        <article class="news-card" data-reveal="scale-in">
-          <span class="news-category" data-category="product-launch">Product Launch</span>
-          <h3>Apex Arbor Unveils NVIDIA Blackwell GPU Cloud Platform</h3>
-          <p class="news-excerpt">Next-generation AI computing infrastructure with breakthrough performance for trillion-parameter models and large-scale training workloads.</p>
-          <div class="news-meta">
-            <span class="news-date">May 10, 2026</span>
-            <a href="#" class="news-link">
-              Read More
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
-            </a>
-          </div>
-        </article>
-        <article class="news-card" data-reveal="scale-in">
-          <span class="news-category" data-category="partnership">Partnership</span>
-          <h3>Strategic Partnership with Leading Southeast Asian Data Centers</h3>
-          <p class="news-excerpt">Expanding our pan-Asia computing network through collaboration with premier data center operators across Singapore, Thailand, and Malaysia.</p>
-          <div class="news-meta">
-            <span class="news-date">April 28, 2026</span>
-            <a href="#" class="news-link">
-              Read More
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
-            </a>
-          </div>
-        </article>
-        <article class="news-card" data-reveal="scale-in">
-          <span class="news-category" data-category="technology">Technology</span>
-          <h3>Self-Developed Scheduling System Achieves 96% Cluster Utilization</h3>
-          <p class="news-excerpt">Our proprietary GPU orchestration platform reduces idle waste and maximizes throughput for enterprise AI training and inference workloads.</p>
-          <div class="news-meta">
-            <span class="news-date">April 15, 2026</span>
-            <a href="#" class="news-link">
-              Read More
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
-            </a>
-          </div>
-        </article>
+      <div class="bg-white p-8 rounded-xl shadow-sm border border-outline/5 flex flex-col">
+        <div class="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-6">
+          <span class="material-symbols-outlined text-[#4a607c] text-3xl">verified</span>
+        </div>
+        <h4 class="text-headline-md text-primary mb-3 min-h-[3em]">Compliance</h4>
+        <p class="text-body-md text-secondary flex-1">SOC 2 Type II, ISO 27001, GDPR compliant — meeting the highest standards for data protection and privacy.</p>
+      </div>
+      <div class="bg-white p-8 rounded-xl shadow-sm border border-outline/5 flex flex-col">
+        <div class="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-6">
+          <span class="material-symbols-outlined text-[#4a607c] text-3xl">language</span>
+        </div>
+        <h4 class="text-headline-md text-primary mb-3 min-h-[3em]">Regional Compliance</h4>
+        <p class="text-body-md text-secondary flex-1">Deep understanding of local regulations across Southeast Asia — PDPA, data sovereignty, and cross-border transfer compliance.</p>
+      </div>
+      <div class="bg-white p-8 rounded-xl shadow-sm border border-outline/5 flex flex-col">
+        <div class="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-6">
+          <span class="material-symbols-outlined text-[#4a607c] text-3xl">monitoring</span>
+        </div>
+        <h4 class="text-headline-md text-primary mb-3 min-h-[3em]">99.9% SLA</h4>
+        <p class="text-body-md text-secondary flex-1">Industry-leading uptime guarantee with redundant infrastructure, proactive monitoring, and rapid incident response.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- GLOBAL PRESENCE -->
-  <section id="global" class="section global-section">
-    <div class="container">
-      <div class="section-header" data-reveal="fade-up">
-        <span class="section-tag">GLOBAL PRESENCE</span>
-        <h2>Asia-Pacific Computing Network</h2>
-        <p>Building a pan-Asia computing network with multinational compliance and local expertise.</p>
+<!-- NEWS SECTION -->
+<section class="bg-surface py-section-padding-lg">
+  <div class="max-w-container-max mx-auto px-gutter">
+    <div class="text-center mb-16 max-w-3xl mx-auto">
+      <span class="font-mono text-[12px] text-secondary mb-4 block uppercase tracking-widest font-bold">Insights</span>
+      <h2 class="text-headline-lg text-primary mb-8">Latest News</h2>
+      <p class="text-body-lg text-secondary">Stay updated with our latest announcements, partnerships, and technology innovations.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <article class="bg-white p-8 rounded-xl shadow-sm border border-outline/5">
+        <span class="font-mono text-[10px] font-bold px-2 py-1 rounded bg-secondary-container text-on-secondary-container uppercase tracking-wider">Product Launch</span>
+        <h3 class="text-headline-md text-primary mt-4 mb-3">Apex Arbor Unveils NVIDIA Blackwell GPU Cloud Platform</h3>
+        <p class="text-body-md text-secondary mb-6">Next-generation AI computing infrastructure with breakthrough performance for trillion-parameter models and large-scale training workloads.</p>
+        <div class="flex items-center justify-between pt-4 border-t border-outline-variant/40">
+          <span class="font-mono text-[11px] text-on-surface-variant uppercase tracking-wider">May 10, 2026</span>
+          <a href="#" class="font-mono text-[11px] text-primary hover:text-primary-fixed-dim transition-colors flex items-center gap-1 uppercase tracking-wider">
+            Read More
+            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </a>
+        </div>
+      </article>
+      <article class="bg-white p-8 rounded-xl shadow-sm border border-outline/5">
+        <span class="font-mono text-[10px] font-bold px-2 py-1 rounded bg-secondary-container text-on-secondary-container uppercase tracking-wider">Partnership</span>
+        <h3 class="text-headline-md text-primary mt-4 mb-3">Strategic Partnership with Leading Southeast Asian Data Centers</h3>
+        <p class="text-body-md text-secondary mb-6">Expanding our pan-Asia computing network through collaboration with premier data center operators across Singapore, Thailand, and Malaysia.</p>
+        <div class="flex items-center justify-between pt-4 border-t border-outline-variant/40">
+          <span class="font-mono text-[11px] text-on-surface-variant uppercase tracking-wider">April 28, 2026</span>
+          <a href="#" class="font-mono text-[11px] text-primary hover:text-primary-fixed-dim transition-colors flex items-center gap-1 uppercase tracking-wider">
+            Read More
+            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </a>
+        </div>
+      </article>
+      <article class="bg-white p-8 rounded-xl shadow-sm border border-outline/5">
+        <span class="font-mono text-[10px] font-bold px-2 py-1 rounded bg-secondary-container text-on-secondary-container uppercase tracking-wider">Technology</span>
+        <h3 class="text-headline-md text-primary mt-4 mb-3">Self-Developed Scheduling System Achieves 96% Cluster Utilization</h3>
+        <p class="text-body-md text-secondary mb-6">Our proprietary GPU orchestration platform reduces idle waste and maximizes throughput for enterprise AI training and inference workloads.</p>
+        <div class="flex items-center justify-between pt-4 border-t border-outline-variant/40">
+          <span class="font-mono text-[11px] text-on-surface-variant uppercase tracking-wider">April 15, 2026</span>
+          <a href="#" class="font-mono text-[11px] text-primary hover:text-primary-fixed-dim transition-colors flex items-center gap-1 uppercase tracking-wider">
+            Read More
+            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- GLOBAL PRESENCE -->
+<section class="bg-surface-container py-section-padding-lg" id="global">
+  <div class="max-w-container-max mx-auto px-gutter">
+    <div class="text-center mb-16 max-w-3xl mx-auto">
+      <span class="font-mono text-[12px] text-secondary mb-4 block uppercase tracking-widest font-bold">Global Presence</span>
+      <h2 class="text-headline-lg text-primary mb-8">Asia-Pacific Computing Network</h2>
+      <p class="text-body-lg text-secondary">Building a pan-Asia computing network with multinational compliance and local expertise.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-white p-10 rounded-xl shadow-sm border border-outline/5">
+        <div class="flex justify-between items-start mb-12">
+          <span class="material-symbols-outlined text-primary text-3xl">hub</span>
+          <span class="font-mono text-[10px] font-bold px-2 py-1 rounded bg-secondary-container text-on-secondary-container uppercase">Planned</span>
+        </div>
+        <h4 class="text-headline-md text-primary mb-4">Singapore</h4>
+        <p class="text-body-md text-secondary">Global Headquarters — Strategic hub for group governance, capital allocation, and investor relations.</p>
       </div>
-      <div class="locations-grid stagger-grid">
-        <div class="location-card" data-reveal="scale-in">
-          <div class="location-flag">🇸🇬</div>
-          <span class="location-status status-planned">Planned</span>
-          <h3>Singapore</h3>
-          <p>Global Headquarters — Strategic hub for group governance, capital allocation, and investor relations.</p>
+      <div class="bg-white p-10 rounded-xl shadow-sm border border-outline/5">
+        <div class="flex justify-between items-start mb-12">
+          <span class="material-symbols-outlined text-primary text-3xl">location_city</span>
+          <span class="font-mono text-[10px] font-bold px-2 py-1 rounded bg-primary-container text-on-primary-container uppercase">In Progress</span>
         </div>
-        <div class="location-card" data-reveal="scale-in">
-          <div class="location-flag">🇹🇭</div>
-          <span class="location-status status-progress">In Progress</span>
-          <h3>Thailand</h3>
-          <p>Bangkok Office — Leveraging Thailand's BOI preferential policies for regional computing deployment.</p>
+        <h4 class="text-headline-md text-primary mb-4">Thailand</h4>
+        <p class="text-body-md text-secondary">Bangkok Office — Leveraging Thailand's BOI preferential policies for regional computing deployment.</p>
+      </div>
+      <div class="bg-white p-10 rounded-xl shadow-sm border border-outline/5">
+        <div class="flex justify-between items-start mb-12">
+          <span class="material-symbols-outlined text-primary text-3xl">factory</span>
+          <span class="font-mono text-[10px] font-bold px-2 py-1 rounded bg-surface-container-highest text-on-surface uppercase">Operational</span>
         </div>
-        <div class="location-card" data-reveal="scale-in">
-          <div class="location-flag">🇲🇾</div>
-          <span class="location-status status-operational">Operational</span>
-          <h3>Malaysia</h3>
-          <p>Kuala Lumpur Office — Aligning with MDEC to accelerate computing service deployment through digital economy policies.</p>
-        </div>
+        <h4 class="text-headline-md text-primary mb-4">Malaysia</h4>
+        <p class="text-body-md text-secondary">Kuala Lumpur Office — Aligning with MDEC to accelerate computing service deployment through digital economy policies.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- CTA SECTION -->
-  <section id="contact" class="section cta-section">
-    <div class="container">
-      <div class="cta-content" data-reveal="fade-up">
-        <h2>Building the Future Together</h2>
-        <p>Whether you need computing services, seek technical collaboration, or are an investor focused on AI computing — we look forward to connecting.</p>
-        <div class="cta-buttons" data-reveal="fade-up" data-delay="2">
-          <a href="mailto:contact@apexarbor.ai" class="btn btn-primary">Contact Us</a>
-          <a href="#platform" class="btn btn-secondary">View Platform</a>
-        </div>
-      </div>
+<!-- CTA SECTION -->
+<section class="bg-primary py-section-padding-lg relative overflow-hidden" id="contact">
+  <div class="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none">
+    <div class="w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary-fixed to-transparent"></div>
+  </div>
+  <div class="max-w-container-max mx-auto px-gutter relative z-10 text-center">
+    <h2 class="text-headline-lg text-on-primary mb-8 max-w-3xl mx-auto">Building the Future Together</h2>
+    <p class="text-body-lg text-on-primary/70 mb-12 max-w-2xl mx-auto">Whether you need computing services, seek technical collaboration, or are an investor focused on AI computing — we look forward to connecting.</p>
+    <div class="flex flex-col sm:flex-row gap-6 justify-center">
+      <a class="bg-on-primary text-primary px-10 py-5 rounded-lg font-mono text-label-md font-bold hover:bg-primary-fixed transition-colors" href="mailto:contact@apexarbor.ai">
+        Contact Us
+      </a>
+      <a class="border border-on-primary text-on-primary px-10 py-5 rounded-lg font-mono text-label-md hover:bg-on-primary/10 transition-colors" href="#platform">
+        View Platform
+      </a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- FOOTER -->
-  <footer class="footer" data-reveal="fade-up">
-    <div class="container">
-      <div class="footer-grid stagger-grid">
-        <div class="footer-brand" data-reveal="fade-in">
-          <div class="nav-logo">Apex Arbor</div>
-          <p>Southeast Asia's Premier AI Computing Infrastructure Partner</p>
-        </div>
-        <div class="footer-col" data-reveal="fade-in">
-          <h4>Platform</h4>
-          <ul>
-            <li><a href="#platform">AI Cloud Platform</a></li>
-            <li><a href="#products">GPU Compute</a></li>
-            <li><a href="#products">CPU Compute</a></li>
-            <li><a href="#products">Bare Metal</a></li>
-            <li><a href="#products">Networking</a></li>
-          </ul>
-        </div>
-        <div class="footer-col" data-reveal="fade-in">
-          <h4>Products</h4>
-          <ul>
-            <li><a href="#products">NVIDIA Blackwell</a></li>
-            <li><a href="#products">NVIDIA Hopper</a></li>
-            <li><a href="#products">NVIDIA Ada</a></li>
-            <li><a href="#why-us">Why Us</a></li>
-            <li><a href="#global">Global Presence</a></li>
-          </ul>
-        </div>
-        <div class="footer-col" data-reveal="fade-in">
-          <h4>Company</h4>
-          <ul>
-            <li><a href="#why-us">About Us</a></li>
-            <li><a href="#global">Locations</a></li>
-            <li><a href="#">Careers</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#">Press</a></li>
-          </ul>
-        </div>
-        <div class="footer-col" data-reveal="fade-in">
-          <h4>Resources</h4>
-          <ul>
-            <li><a href="#">Documentation</a></li>
-            <li><a href="#">API Reference</a></li>
-            <li><a href="#">Status</a></li>
-            <li><a href="#">Trust Center</a></li>
-            <li><a href="#">Blog</a></li>
-          </ul>
-        </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-primary-container text-on-primary-container py-section-padding-md">
+  <div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-5 gap-gutter">
+    <div class="col-span-1 md:col-span-1">
+      <div class="mb-4">
+        <img src="images/APEX_logo.png" alt="Apex Arbor" class="h-10 w-auto brightness-0 invert opacity-90" onerror="this.style.display='none'">
       </div>
-      <div class="footer-bottom" data-reveal="fade-up" data-delay="2">
-        <p>&copy; 2026 Apex Arbor Holding Limited. All rights reserved.</p>
-        <div class="footer-links">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
-          <a href="#">Cookie Policy</a>
-        </div>
-        <div class="social-links">
-          <a href="#" aria-label="LinkedIn">in</a>
-          <a href="#" aria-label="Twitter">𝕏</a>
-          <a href="#" aria-label="GitHub">gh</a>
-        </div>
-      </div>
+      <p class="text-body-md opacity-70">A global, capitalization-ready AI computing services provider — delivering professional computing services across the Asia-Pacific region with enterprise-grade governance standards.</p>
     </div>
-  </footer>
+    <div class="md:pl-4">
+      <h5 class="font-mono text-[11px] text-on-primary-fixed font-bold mb-5 uppercase tracking-wider">Platform</h5>
+      <ul class="space-y-3 text-[14px] text-on-primary-container/70">
+        <li><a class="hover:text-on-primary-fixed transition-colors" href="#platform">AI Cloud Platform</a></li>
+        <li><a class="hover:text-on-primary-fixed transition-colors" href="#products">GPU Compute</a></li>
+        <li><a class="hover:text-on-primary-fixed transition-colors" href="#products">CPU Compute</a></li>
+        <li><a class="hover:text-on-primary-fixed transition-colors" href="#products">Bare Metal</a></li>
+        <li><a class="hover:text-on-primary-fixed transition-colors" href="#products">Networking</a></li>
+      </ul>
+    </div>
+    <div class="md:pl-4">
+      <h5 class="font-mono text-[11px] text-on-primary-fixed font-bold mb-5 uppercase tracking-wider">Products</h5>
+      <ul class="space-y-3 text-[14px] text-on-primary-container/70">
+        <li><a class="hover:text-on-primary-fixed transition-colors" href="#products">NVIDIA Blackwell</a></li>
+        <li><a class="hover:text-on-primary-fixed transition-colors" href="#products">NVIDIA Hopper</a></li>
+        <li><a class="hover:text-on-primary-fixed transition-colors" href="#products">NVIDIA Ada</a></li>
+        <li><a class="hover:text-on-primary-fixed transition-colors" href="#why-us">Why Us</a></li>
+        <li><a class="hover:text-on-primary-fixed transition-colors" href="#global">Global Presence</a></li>
+      </ul>
+    </div>
+    <div class="md:pl-4">
+      <h5 class="font-mono text-[11px] text-on-primary-fixed font-bold mb-5 uppercase tracking-wider">Company</h5>
+      <ul class="space-y-3 text-[14px] text-on-primary-container/70">
+        <li><a class="hover:text-on-primary-fixed transition-colors" href="#why-us">About Us</a></li>
+        <li><a class="hover:text-on-primary-fixed transition-colors" href="#global">Locations</a></li>
+        <li><a class="hover:text-on-primary-fixed transition-colors" href="#">Careers</a></li>
+        <li><a class="hover:text-on-primary-fixed transition-colors" href="#contact">Contact</a></li>
+        <li><a class="hover:text-on-primary-fixed transition-colors" href="#">Press</a></li>
+      </ul>
+    </div>
+    <div class="md:pl-4">
+      <h5 class="font-mono text-[11px] text-on-primary-fixed font-bold mb-5 uppercase tracking-wider">Contact</h5>
+      <ul class="space-y-3 text-[14px] text-on-primary-container/70">
+        <li><a href="mailto:apexarbor@apexarbor.ai" class="hover:text-on-primary-fixed transition-colors">apexarbor@apexarbor.ai</a></li>
+        <li><span class="leading-snug opacity-80 block">Room 3403, The Ninth Tower<br>Building A, Rama 9 Road<br>Huaykwang District, Bangkok, Thailand</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-container-max mx-auto px-gutter mt-16 pt-8 border-t border-on-primary-container/10">
+    <p class="font-mono text-[12px] text-on-primary-container/50 text-center">&copy; 2026 Apex Arbor Holding Limited. All rights reserved.</p>
+  </div>
+</footer>
 
-  <script src="js/main.js"></script>
-  <script>
-    // Navbar scroll effect
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-      } else {
-        navbar.classList.remove('scrolled');
+<script>
+// Navbar scroll effect
+const navbar = document.getElementById('navbar');
+const nav = navbar.querySelector('nav');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 50) {
+    nav.classList.remove('h-20');
+    nav.classList.add('h-16');
+    navbar.classList.add('shadow-sm');
+  } else {
+    nav.classList.remove('h-16', 'shadow-sm');
+    nav.classList.add('h-20');
+    navbar.classList.remove('shadow-sm');
+  }
+});
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    const href = this.getAttribute('href');
+    if (href === '#') return;
+    e.preventDefault();
+    const target = document.querySelector(href);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
+// Mobile menu toggle
+const menuBtn = document.getElementById('menuBtn');
+const navMenu = document.getElementById('navMenu');
+if (menuBtn && navMenu) {
+  menuBtn.addEventListener('click', () => {
+    navMenu.classList.toggle('hidden');
+    navMenu.classList.toggle('flex');
+    navMenu.classList.toggle('flex-col');
+    navMenu.classList.toggle('absolute');
+    navMenu.classList.toggle('top-20');
+    navMenu.classList.toggle('left-0');
+    navMenu.classList.toggle('w-full');
+    navMenu.classList.toggle('bg-surface');
+    navMenu.classList.toggle('p-6');
+    navMenu.classList.toggle('shadow-lg');
+    navMenu.classList.toggle('space-x-8');
+    navMenu.classList.toggle('space-y-4');
+  });
+}
+
+// Hero carousel with tab switches
+const slides = document.querySelectorAll('.carousel-slide');
+const tabs = document.querySelectorAll('.carousel-tab');
+function showSlide(index) {
+  slides.forEach((s, i) => {
+    if (i === index) {
+      s.classList.remove('hidden');
+      s.classList.add('active');
+    } else {
+      s.classList.add('hidden');
+      s.classList.remove('active');
+    }
+  });
+  tabs.forEach((t, i) => {
+    if (i === index) {
+      t.classList.add('active');
+    } else {
+      t.classList.remove('active');
+    }
+  });
+}
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    showSlide(parseInt(tab.dataset.slide));
+  });
+});
+
+// IntersectionObserver reveal for sections
+const observerOptions = { threshold: 0.1 };
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('opacity-100');
+      entry.target.classList.remove('opacity-0', 'translate-y-8');
+    }
+  });
+}, observerOptions);
+document.querySelectorAll('section').forEach(section => {
+  section.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-8');
+  observer.observe(section);
+});
+
+// Banner particles - mouse-following network
+const pCanvas = document.getElementById('tech-fluid-bg');
+const pCtx = pCanvas.getContext('2d');
+const pCfg = { particleCount: 80, maxDistance: 150, mouseRadius: 200, mouseGravity: 0.15 };
+let pParticles = [];
+const pMouse = { x: null, y: null, radius: 200 };
+
+function pResize() {
+  const hero = document.getElementById('hero');
+  const rect = hero.getBoundingClientRect();
+  const dpr = window.devicePixelRatio || 1;
+  pCanvas.width = rect.width * dpr;
+  pCanvas.height = rect.height * dpr;
+  pCanvas.style.width = rect.width + 'px';
+  pCanvas.style.height = rect.height + 'px';
+  pCtx.scale(dpr, dpr);
+}
+window.addEventListener('resize', pResize);
+
+window.addEventListener('mousemove', (e) => {
+  const hero = document.getElementById('hero');
+  const r = hero.getBoundingClientRect();
+  pMouse.x = e.clientX - r.left;
+  pMouse.y = e.clientY - r.top;
+});
+window.addEventListener('mouseout', () => { pMouse.x = null; pMouse.y = null; });
+
+window.addEventListener('click', () => {
+  if (pMouse.x === null) return;
+  pParticles.forEach(p => {
+    const dx = p.x - pMouse.x;
+    const dy = p.y - pMouse.y;
+    const dist = Math.sqrt(dx * dx + dy * dy);
+    if (dist < pMouse.radius) {
+      const force = (pMouse.radius - dist) / dist;
+      p.vx += dx * force * 0.5;
+      p.vy += dy * force * 0.5;
+    }
+  });
+});
+
+class PParticle {
+  constructor(w, h) {
+    this.x = Math.random() * w;
+    this.y = Math.random() * h;
+    this.vx = (Math.random() - 0.5) * 0.8;
+    this.vy = (Math.random() - 0.5) * 0.8;
+    this.radius = Math.random() * 2 + 1;
+  }
+  update(w, h) {
+    this.x += this.vx; this.y += this.vy;
+    if (this.x < 0 || this.x > w) this.vx *= -1;
+    if (this.y < 0 || this.y > h) this.vy *= -1;
+    if (pMouse.x !== null) {
+      const dx = pMouse.x - this.x;
+      const dy = pMouse.y - this.y;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist < pCfg.mouseRadius) {
+        const force = (pCfg.mouseRadius - dist) / pCfg.mouseRadius;
+        this.vx += (dx / dist) * force * pCfg.mouseGravity;
+        this.vy += (dy / dist) * force * pCfg.mouseGravity;
       }
-    });
+    }
+    const speed = Math.sqrt(this.vx * this.vx + this.vy * this.vy);
+    if (speed > 3) { this.vx = (this.vx / speed) * 3; this.vy = (this.vy / speed) * 3; }
+    this.vx *= 0.98; this.vy *= 0.98;
+  }
+  draw() {
+    pCtx.beginPath();
+    pCtx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+    pCtx.fillStyle = '#0d2237';
+    pCtx.fill();
+  }
+}
 
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      });
-    });
+function pInit() {
+  const rect = document.getElementById('hero').getBoundingClientRect();
+  pResize();
+  pParticles = [];
+  for (let i = 0; i < pCfg.particleCount; i++) pParticles.push(new PParticle(rect.width, rect.height));
+}
 
-    // Mobile menu toggle
-    const menuBtn = document.querySelector('.menu-btn');
-    const navMenu = document.querySelector('.nav-menu');
-    menuBtn.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-      menuBtn.classList.toggle('active');
-    });
-
-    // Dropdown hover
-    document.querySelectorAll('.has-dropdown').forEach(item => {
-      item.addEventListener('mouseenter', () => {
-        item.classList.add('hover');
-      });
-      item.addEventListener('mouseleave', () => {
-        item.classList.remove('hover');
-      });
-    });
-  </script>
+function pAnimate() {
+  const rect = document.getElementById('hero').getBoundingClientRect();
+  pCtx.clearRect(0, 0, rect.width, rect.height);
+  pParticles.forEach(p => { p.update(rect.width, rect.height); p.draw(); });
+  for (let i = 0; i < pParticles.length; i++) {
+    for (let j = i + 1; j < pParticles.length; j++) {
+      const dx = pParticles[i].x - pParticles[j].x;
+      const dy = pParticles[i].y - pParticles[j].y;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist < pCfg.maxDistance) {
+        const alpha = (pCfg.maxDistance - dist) / pCfg.maxDistance * 0.3;
+        pCtx.beginPath();
+        pCtx.moveTo(pParticles[i].x, pParticles[i].y);
+        pCtx.lineTo(pParticles[j].x, pParticles[j].y);
+        pCtx.strokeStyle = `rgba(13, 34, 55, ${alpha})`;
+        pCtx.lineWidth = 0.6;
+        pCtx.stroke();
+      }
+    }
+    if (pMouse.x !== null) {
+      const mDx = pParticles[i].x - pMouse.x;
+      const mDy = pParticles[i].y - pMouse.y;
+      const mDist = Math.sqrt(mDx * mDx + mDy * mDy);
+      if (mDist < pCfg.mouseRadius) {
+        const mAlpha = (pCfg.mouseRadius - mDist) / pCfg.mouseRadius * 0.4;
+        pCtx.beginPath();
+        pCtx.moveTo(pParticles[i].x, pParticles[i].y);
+        pCtx.lineTo(pMouse.x, pMouse.y);
+        pCtx.strokeStyle = `rgba(13, 34, 55, ${mAlpha})`;
+        pCtx.lineWidth = 1;
+        pCtx.stroke();
+      }
+    }
+  }
+  requestAnimationFrame(pAnimate);
+}
+pInit();
+pAnimate();
+</script>
+<style>
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-scroll {
+  animation: scroll 30s linear infinite;
+}
+/* Carousel tab styles */
+.carousel-tab {
+  background: rgba(0,0,0,0.04);
+  color: #191c1e;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.carousel-tab:hover {
+  background: rgba(0,0,0,0.08);
+}
+.carousel-tab.active {
+  background: #4a607c;
+  color: white;
+}
+.carousel-tab.active:hover {
+  background: #4a607c;
+}
+/* Page buttons use theme accent */
+.bg-primary.text-on-primary,
+a.bg-primary {
+  background-color: #4a607c !important;
+}
+a.bg-primary:hover {
+  background-color: #3a4e68 !important;
+}
+.carousel-tab span {
+  transition: opacity 0.2s ease;
+}
+.carousel-tab.active .opacity-40,
+.carousel-tab.active [class*="opacity-"] {
+  opacity: 0.6;
+}
+</style>
 </body>
 </html>
