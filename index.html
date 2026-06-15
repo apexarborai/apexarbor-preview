@@ -750,18 +750,18 @@ tailwind.config = {
 </footer>
 
 <script>
-// Navbar scroll effect
+// Navbar scroll effect + frosted glass
 const navbar = document.getElementById('navbar');
 const nav = navbar.querySelector('nav');
 window.addEventListener('scroll', () => {
   if (window.scrollY > 50) {
     nav.classList.remove('h-20');
     nav.classList.add('h-16');
-    navbar.classList.add('shadow-sm');
+    navbar.classList.add('navbar-scrolled');
   } else {
-    nav.classList.remove('h-16', 'shadow-sm');
+    nav.classList.remove('h-16');
     nav.classList.add('h-20');
-    navbar.classList.remove('shadow-sm');
+    navbar.classList.remove('navbar-scrolled');
   }
 });
 
@@ -968,6 +968,13 @@ pAnimate();
 }
 .animate-scroll {
   animation: scroll 30s linear infinite;
+}
+/* Navbar frosted glass on scroll */
+.navbar-scrolled {
+  background: rgba(255,255,255,0.72) !important;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
 }
 /* Carousel tab styles — frosted glass on inactive */
 .carousel-tab {
