@@ -185,7 +185,7 @@ tailwind.config = {
         </div>
         </div>
         <!-- Tab Switches -->
-  <div class="w-full border-t border-outline-variant/30 relative z-20">
+  <div class="w-full border-t border-outline-variant/30 relative z-20 bg-white/30 backdrop-blur-[8px]">
     <div class="flex w-full max-w-container-max mx-auto">
       <button class="carousel-tab active flex-1 flex flex-col items-center justify-center gap-1 py-6 font-mono transition-all cursor-pointer"
                 data-slide="0">
@@ -968,15 +968,13 @@ updateNavbar();
 .animate-scroll {
   animation: scroll 30s linear infinite;
 }
-/* Carousel tab styles — transparent frosted glass */
+/* Carousel tab styles — frosted glass strip on parent, interactive tabs */
 .carousel-tab {
-  background: rgba(255,255,255,0.3);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: transparent;
   color: #191c1e;
   border: none;
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: all 0.2s ease;
 }
 
 /* Product card hover effects */
@@ -990,15 +988,19 @@ updateNavbar();
   box-shadow: 0 20px 40px rgba(0, 102, 255, 0.15), 0 0 30px rgba(0, 212, 255, 0.15), 0 0 60px rgba(0, 212, 255, 0.1);
 }
 .carousel-tab:hover:not(.active) {
-  background: rgba(255,255,255,0.5);
-  color: #191c1e;
+  background: rgba(255,255,255,0.4);
+  transform: translateY(-1px);
 }
 .carousel-tab.active {
   background: #4a607c;
   color: white;
 }
 .carousel-tab.active:hover {
-  background: #4a607c;
+  background: #5a708c;
+}
+/* Click press effect */
+.carousel-tab:active {
+  transform: scale(0.96);
 }
 /* Slide top-aligned so extra hero height stays at bottom, clearing the tab bar */
 .carousel-slide {
