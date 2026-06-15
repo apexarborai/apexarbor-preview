@@ -145,7 +145,7 @@ tailwind.config = {
 <main class="pt-20">
 
 <!-- HERO SECTION with Carousel -->
-<section class="relative h-[85vh] min-h-[700px] flex flex-col overflow-hidden" id="hero">
+<section class="relative h-[60vh] min-h-[500px] flex flex-col overflow-hidden" id="hero">
   <canvas id="tech-fluid-bg" class="absolute inset-0 w-full h-full pointer-events-none" style="z-index:0"></canvas>
   <div class="flex-1 flex flex-col w-full max-w-container-max mx-auto px-gutter">
     <div class="flex-1 flex flex-col justify-center pb-8">
@@ -196,27 +196,28 @@ tailwind.config = {
         </div>
         </div>
         </div>
-        <!-- Tab Switches -->
-  <div class="absolute bottom-0 left-0 right-0 w-full border-t border-outline-variant/30 z-30 bg-[#0A1628]/70 backdrop-blur-md">
-    <div class="flex w-full max-w-container-max mx-auto">
-      <button class="carousel-tab active flex-1 flex flex-col items-center justify-center gap-1 py-4 font-mono transition-all cursor-pointer"
-                data-slide="0">
-          <span class="text-[10px] uppercase tracking-widest opacity-60 leading-none">CLOUD</span>
-          <span class="text-[13px] font-bold leading-tight">AI Cloud</span>
-        </button>
-      <button class="carousel-tab flex-1 flex flex-col items-center justify-center gap-1 py-4 font-mono transition-all cursor-pointer"
-                data-slide="1">
-          <span class="text-[10px] uppercase tracking-widest opacity-40 leading-none">GPU</span>
-          <span class="text-[13px] font-bold leading-tight">GPU Solutions</span>
-        </button>
-      <button class="carousel-tab flex-1 flex flex-col items-center justify-center gap-1 py-4 font-mono transition-all cursor-pointer"
-                data-slide="2">
-          <span class="text-[10px] uppercase tracking-widest opacity-40 leading-none">NETWORK</span>
-          <span class="text-[13px] font-bold leading-tight">Global Network</span>
-        </button>
-    </div>
-  </div>
 </section>
+
+<!-- Tab Switches (outside hero — extends banner bottom) -->
+<div class="border-t border-outline-variant/30 bg-[#0A1628]">
+  <div class="flex w-full max-w-container-max mx-auto">
+    <button class="carousel-tab active flex-1 flex flex-col items-center justify-center gap-1 py-4 font-mono transition-all cursor-pointer"
+              data-slide="0">
+        <span class="text-[10px] uppercase tracking-widest opacity-60 leading-none">CLOUD</span>
+        <span class="text-[13px] font-bold leading-tight">AI Cloud</span>
+      </button>
+    <button class="carousel-tab flex-1 flex flex-col items-center justify-center gap-1 py-4 font-mono transition-all cursor-pointer"
+              data-slide="1">
+        <span class="text-[10px] uppercase tracking-widest opacity-40 leading-none">GPU</span>
+        <span class="text-[13px] font-bold leading-tight">GPU Solutions</span>
+      </button>
+    <button class="carousel-tab flex-1 flex flex-col items-center justify-center gap-1 py-4 font-mono transition-all cursor-pointer"
+              data-slide="2">
+        <span class="text-[10px] uppercase tracking-widest opacity-40 leading-none">NETWORK</span>
+        <span class="text-[13px] font-bold leading-tight">Global Network</span>
+      </button>
+  </div>
+</div>
 
 <!-- STATS BAR -->
 <section class="bg-[#0A1628] py-6 text-on-primary">
@@ -981,14 +982,14 @@ pAnimate();
   background: rgba(255,255,255,0.06);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  color: #191c1e;
+  color: rgba(255,255,255,0.6);
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 .carousel-tab:hover:not(.active) {
   background: rgba(255,255,255,0.12);
-  color: #000000;
+  color: rgba(255,255,255,0.85);
 }
 .carousel-tab.active {
   background: #4a607c;
