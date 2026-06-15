@@ -987,6 +987,14 @@ updateNavbar();
   border-color: rgba(0, 212, 255, 0.4);
   box-shadow: 0 20px 40px rgba(0, 102, 255, 0.15), 0 0 30px rgba(0, 212, 255, 0.15), 0 0 60px rgba(0, 212, 255, 0.1);
 }
+/* Carousel tab styles — frosted glass strip on parent, interactive tabs */
+.carousel-tab {
+  background: transparent;
+  color: #191c1e;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
 .carousel-tab:hover:not(.active) {
   background: rgba(255,255,255,0.4);
   transform: translateY(-1px);
@@ -994,12 +1002,18 @@ updateNavbar();
 .carousel-tab.active {
   background: #4a607c;
   color: white;
+  cursor: default;
 }
-.carousel-tab.active:hover {
-  background: #5a708c;
+/* Active tab: no hover/selected/press effects at all */
+.carousel-tab.active:hover,
+.carousel-tab.active:active,
+.carousel-tab.active:focus {
+  background: #4a607c;
+  color: white;
+  transform: none;
 }
-/* Click press effect */
-.carousel-tab:active {
+/* Click press effect — non-active only */
+.carousel-tab:not(.active):active {
   transform: scale(0.96);
 }
 /* Slide top-aligned so extra hero height stays at bottom, clearing the tab bar */
