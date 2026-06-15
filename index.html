@@ -3,1094 +3,610 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta name="description" content="Apex Arbor Holding Limited — a global, capitalization-ready AI computing services provider. Focused on building Asia-Pacific computing hubs, delivering GPU computing clusters and cloud computing services to build the region's premier AI computing foundation.">
-  <title>Apex Arbor Holding Limited</title>
+  <meta name="description" content="Apex Arbor — Southeast Asia's Premier AI Computing Infrastructure Partner">
+  <title>Apex Arbor | Powering the AI Era</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&display=swap&v=2" rel="stylesheet">
-  <style>
-    /* ═════════════════════════════════════
-       RESET & BASE
-       ═════════════════════════════════════ */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      color: #1b1b1d;
-      background: #fbf9fb;
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-    a { text-decoration: none; color: inherit; }
-    img { max-width: 100%; display: block; }
-    ul { list-style: none; }
-
-    /* ═════════════════════════════════════
-       NAVBAR — transparent by default, solid on scroll
-       ═════════════════════════════════════ */
-    #navbar {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 50;
-      transition: background 0.35s, box-shadow 0.35s, border-color 0.35s;
-      padding: 14px 24px;
-    }
-    /* default state: transparent over hero */
-    #navbar.nav-transparent {
-      background: transparent;
-      border-bottom: none;
-      box-shadow: none;
-    }
-    /* scrolled state: solid */
-    #navbar.nav-solid {
-      background: rgba(255,255,255,0.94);
-      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(0,0,0,0.06);
-      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-    }
-
-    .nav-inner {
-      max-width: 1280px; margin: 0 auto;
-      display: flex; align-items: center; justify-content: space-between;
-    }
-    .nav-logo { height: 36px; transition: opacity 0.3s; }
-    /* logo display is handled entirely by JS inline styles — no CSS display rules here */
-
-    .nav-links { display: none; align-items: center; gap: 26px; }
-    /* transparent nav: white text */
-    #navbar:not(.nav-solid) .nav-links a {
-      font-family: 'Manrope', 'Segoe UI', sans-serif;
-      font-size: 12px; font-weight: 900; text-transform: uppercase;
-      letter-spacing: 0.07em;
-      color: #fff; transition: color 0.25s;
-      padding-bottom: 2px; border-bottom: 2px solid transparent;
-    }
-    #navbar:not(.nav-solid) .nav-links a:hover,
-    #navbar:not(.nav-solid) .nav-links a.active {
-      color: #fff; border-color: #93c5fd;
-    }
-    /* solid nav: dark text */
-    #navbar.nav-solid .nav-links a {
-      font-family: 'Manrope', 'Segoe UI', sans-serif;
-      font-size: 12px; font-weight: 900; text-transform: uppercase;
-      letter-spacing: 0.07em;
-      color: #64748b; transition: color 0.25s;
-      padding-bottom: 2px; border-bottom: 2px solid transparent;
-    }
-    #navbar.nav-solid .nav-links a:hover,
-    #navbar.nav-solid .nav-links a.active { color: #0058bc; border-color: #0058bc; }
-
-    .nav-cta {
-      display: none;
-      background: #0058bc; color: #fff;
-      padding: 9px 22px; border-radius: 10px;
-      font-size: 13px; font-weight: 700;
-      transition: background 0.2s;
-    }
-    .nav-cta:hover { background: #004494; }
-    .menu-btn {
-      display: flex; align-items: center; justify-content: center;
-      width: 40px; height: 40px; border-radius: 8px;
-      background: none; border: none; cursor: pointer;
-      color: #fff;
-    }
-    .nav-solid .menu-btn { color: #334155; }
-    .menu-btn:hover { background: rgba(255,255,255,0.15); }
-    .nav-solid .menu-btn:hover { background: #f1f5f9; }
-    #mobile-menu {
-      max-height: 0; overflow: hidden;
-      transition: max-height 0.35s ease, opacity 0.3s ease;
-      opacity: 0;
-      background: rgba(15,23,42,0.95);
-    }
-    #mobile-menu.open { max-height: 500px; opacity: 1; }
-    #mobile-menu a {
-      display: block; padding: 12px 24px;
-      font-family: 'Manrope', 'Segoe UI', sans-serif;
-      font-size: 13px; font-weight: 700; text-transform: uppercase;
-      color: rgba(255,255,255,0.85); border-radius: 8px; margin: 2px 12px;
-    }
-    #mobile-menu a:hover { background: rgba(255,255,255,0.10); color: #fff; }
-
-    /* ═════════════════════════════════════
-       HERO SECTION — matching screenshot exactly
-       ═════════════════════════════════════ */
-    .hero {
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      text-align: left;
-      padding: 120px 0 0;
-      background:
-        linear-gradient(135deg, rgba(15,23,42,0.75) 0%, rgba(30,41,59,0.68) 50%, rgba(51,65,85,0.60) 100%),
-        url('images/hero-bg.png') right center/cover no-repeat;
-      color: #fff;
-      overflow: hidden;
-    }
-
-    /* Grid overlay removed per request */
-
-    /* Hero content: left-aligned, max-width constrained */
-    .hero-inner {
-      position: relative;
-      z-index: 2;
-      width: 100%;
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0 48px;
-    }
-
-    /* Badge / Tag */
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 999px;
-      padding: 6px 18px;
-      margin-bottom: 32px;
-    }
-    .hero-badge span {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      color: rgba(255,255,255,0.55);
-    }
-    .hero-badge .dot {
-      width: 4px;
-      height: 4px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.35);
-      flex-shrink: 0;
-    }
-    .hero-badge .label {
-      font-size: 9px;
-      letter-spacing: 0.12em;
-      color: rgba(255,255,255,0.45);
-      text-transform: uppercase;
-      font-weight: 600;
-    }
-    .br-mobile { display: none; }
-    .br-desktop { display: inline; }
-
-
-    /* Main Headline — large, white, no gradient */
-    .hero h1 {
-      font-family: 'Manrope', 'Segoe UI', sans-serif;
-      font-size: 56px;
-      font-weight: 900 !important;
-      line-height: 1.08;
-      letter-spacing: -0.03em;
-      margin-bottom: 24px;
-      max-width: 800px;
-      color: #fff;
-    }
-
-    /* Subtitle — two lines, muted */
-    .hero p {
-      font-size: 18px;
-      line-height: 1.75;
-      color: rgba(255,255,255,0.55);
-      max-width: 580px;
-      margin: 0 0 48px;
-      font-weight: 400;
-    }
-
-    /* ═════════════════════════════════════
-       HERO BOTTOM BAR
-       Buttons top row | Stats bottom row (desktop)
-       ═════════════════════════════════════ */
-    .hero-bar {
-      position: relative;
-      z-index: 2;
-      width: 100%;
-      max-width: 1280px;
-      margin: auto auto 0;
-      padding: 40px 48px 60px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 32px;
-      border-top: none;
-      box-sizing: border-box;
-      transform: translateY(-54px);
-    }
-
-    /* Buttons container — left-aligned */
-    .hero-btns {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      flex-shrink: 0;
-    }
-
-    /* Primary Button — blue, prominent */
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: #0070eb;
-      color: #fff;
-      padding: 14px 32px;
-      border-radius: 10px;
-      font-family: 'Manrope', 'Segoe UI', sans-serif;
-      font-weight: 700;
-      font-size: 15px;
-      transition: all 0.25s ease;
-      box-shadow: 0 2px 12px rgba(0,112,235,0.35);
-    }
-    .btn-primary:hover {
-      background: #0060cc;
-      transform: translateY(-1px);
-      box-shadow: 0 4px 20px rgba(0,112,235,0.45);
-    }
-    .btn-primary svg {
-      transition: transform 0.25s;
-    }
-    .btn-primary:hover svg {
-      transform: translateX(3px);
-    }
-
-    /* Secondary Button — dark with border */
-    .btn-secondary {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.18);
-      color: #fff;
-      padding: 14px 32px;
-      border-radius: 10px;
-      font-family: 'Manrope', 'Segoe UI', sans-serif;
-      font-weight: 600;
-      font-size: 15px;
-      transition: all 0.25s ease;
-    }
-    .btn-secondary:hover {
-      background: rgba(255,255,255,0.1);
-      border-color: rgba(255,255,255,0.3);
-    }
-
-    /* ═════════════════════════════════════
-       STATS ROW — below buttons, with dividers
-       Layout: left | center | right, each column left-aligned internally
-       ═════════════════════════════════════ */
-    .hero-stats-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 0;
-      color: #fff;
-      width: 100%;
-    }
-
-    .hero-stats-row > div {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;  /* 每列内部左对齐 */
-      text-align: left;
-      padding: 0 40px;
-    }
-    .hero-stats-row > div:first-child {
-      padding-left: 0;
-    }
-    .hero-stats-row > div:last-child {
-      padding-right: 0;
-    }
-    /* Vertical dividers between stats */
-    .hero-stats-row > div:not(:last-child)::after {
-      content: '';
-      position: absolute;
-      right: 0;
-      top: 4px;
-      width: 1px;
-      height: 56px;
-      background: rgba(255,255,255,0.1);
-    }
-
-    .stat-num {
-      font-family: 'Manrope', 'Segoe UI', sans-serif;
-      font-size: 48px;
-      font-weight: 900;
-      letter-spacing: -0.03em;
-      line-height: 1.0;
-      color: #fff;
-      margin-bottom: 8px;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.3);
-    }
-
-    .stat-lbl {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      color: rgba(255,255,255,0.35);
-      text-transform: uppercase;
-      line-height: 1.4;
-    }
-
-    /* ═════════════════════════════════════
-       RESPONSIVE — Desktop First
-       ═════════════════════════════════════ */
-    @media (min-width: 1100px) {
-      .hero h1 { font-size: 68px; }
-      .stat-num { font-size: 56px; }
-    }
-
-    @media (max-width: 1023px) {
-      .hero-bar {
-        padding: 36px 48px 56px;
-      }
-      .hero-stats-row {
-        gap: 28px;
-      }
-      .hero-stats-row > div:not(:last-child)::after {
-        right: -14px;
-      }
-      .stat-num { font-size: 38px; }
-    }
-
-    @media (max-width: 767px) {
-      /* Hero mobile */
-      .hero {
-        padding: 100px 0 0;
-        text-align: left;
-        align-items: flex-start;
-      }
-      .hero-inner {
-        padding: 0 24px;
-        text-align: left;
-      }
-      .hero-badge {
-        margin-left: 0;
-        margin-right: auto;
-        padding: 6px 18px;
-        gap: 8px;
-      }
-      .hero-badge span { font-size: 10px; }
-      .hero-badge .dot { width: 4px; height: 4px; }
-      .hero-badge .label { font-size: 9px; }
-      .hero h1 {
-        font-size: 40px;
-        text-align: left;
-        margin-bottom: 20px;
-        line-height: 1.12;
-      }
-      .br-mobile { display: inline; }
-      .br-desktop { display: none; }
-      .hero p {
-        font-size: 15px;
-        margin-bottom: 36px;
-        text-align: left;
-        max-width: 100%;
-        line-height: 1.7;
-      }
-      .hero-bar {
-        padding: 28px 24px 48px;
-        gap: 28px;
-        align-items: flex-start;
-      }
-      .hero-btns {
-        flex-direction: column;
-        width: 100%;
-        justify-content: flex-start;
-        gap: 14px;
-      }
-      .hero-btns a {
-        width: 100%;
-        justify-content: center;
-        padding: 14px 32px;
-        font-size: 15px;
-      }
-      .hero-stats-row {
-        grid-template-columns: 1fr;
-        gap: 16px;
-        text-align: center;
-        width: 100%;
-      }
-      .hero-stats-row > div {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 12px 0;
-        border-bottom: 1px solid rgba(255,255,255,0.06);
-      }
-      .hero-stats-row > div:not(:last-child)::after {
-        display: none;
-      }
-      .hero-stats-row > div:last-child {
-        border-bottom: none;
-      }
-      .stat-num {
-        font-size: 32px;
-      }
-
-      /* Sections mobile */
-      .section { padding: 64px 16px; }
-      .sec-head { margin-bottom: 36px; text-align: center; }
-      .sec-head h2 {
-        font-size: 28px;
-        margin-bottom: 12px;
-      }
-      .sec-head .sec-label {
-        font-size: 11px;
-        letter-spacing: 0.14em;
-        margin-bottom: 6px;
-      }
-      .sec-head .divider {
-        margin-left: auto;
-        margin-right: auto;
-      }
-      .sec-head p {
-        font-size: 14px;
-        margin-top: 14px;
-      }
-
-      /* Cards mobile */
-      .card { padding: 22px; border-radius: 14px; }
-      .card-icon {
-        width: 42px; height: 42px; border-radius: 10px;
-        margin-bottom: 14px;
-      }
-      .card-icon svg { width: 22px; height: 22px; }
-      .card h3 { font-size: 16px; margin-bottom: 8px; }
-      .card p { font-size: 13px; line-height: 1.7; }
-      .card-num .num { font-size: 28px; margin-bottom: 8px; }
-      .card-bg-icon {
-        width: 180px;
-        height: 180px;
-        right: -40px;
-        bottom: -40px;
-      }
-
-      /* Grid mobile */
-      .grid-4, .grid-3, .grid-2 { gap: 14px; }
-
-      /* Tech cards mobile */
-      .tech-icon { width: 60px; height: 60px; }
-      .tech-icon svg { width: 28px; height: 28px; }
-      .tech-card h4 { font-size: 16px; }
-      .tech-card p { font-size: 13px; max-width: 100%; }
-
-      /* Globe cards mobile */
-      .globe-card { padding: 16px; border-radius: 14px; }
-      .globe-card .code { font-size: 40px; }
-      .globe-card .country { font-size: 11px; margin-bottom: 6px; }
-      .globe-card h4 { font-size: 16px; margin-bottom: 6px; }
-      .globe-card p { font-size: 12px; line-height: 1.65; }
-
-      /* Shareholder mobile */
-      .shareholder { margin-top: 36px; padding-top: 28px; gap: 12px; }
-      .shareholder .name { font-size: 18px; }
-      .shareholder .desc { font-size: 12px; max-width: 100%; }
-
-      /* CTA mobile */
-      .cta-wrap { padding: 36px 20px; border-radius: 18px; }
-      .cta-wrap h2 { font-size: 24px; margin-bottom: 14px; }
-      .cta-wrap > p { font-size: 14px; margin-bottom: 28px; }
-      .cta-card { padding: 14px 16px; border-radius: 12px; }
-      .cta-card svg { width: 20px; height: 20px; }
-      .cta-card .val { font-size: 13px; }
-
-      /* Footer mobile */
-      .footer-inner { padding: 36px 16px 0; gap: 24px; }
-      .footer-brand p { max-width: 100%; font-size: 12px; }
-      .footer-col h5 { font-size: 10px; margin-bottom: 12px; }
-      .footer-col a, .footer-col li { font-size: 12px; }
-      .footer-bot { padding: 16px; margin-top: 28px; font-size: 12px; }
-
-      /* Capital header mobile */
-      .cap-header { margin-bottom: 36px; }
-      .cap-badge { padding: 6px 14px; }
-      .cap-badge span { font-size: 12px; }
-    }
-
-    /* ═════════════════════════════════════
-       SECTIONS (COMMON)
-       ═════════════════════════════════════ */
-    .section { padding: 96px 20px; }
-    @media (min-width: 768px) { .section { padding: 110px 40px; } }
-    .sec-inner { max-width: 1200px; margin: 0 auto; }
-    .sec-head { margin-bottom: 56px; }
-    .sec-head h2 {
-      font-family: 'Manrope', 'Segoe UI', sans-serif;
-      font-size: 42px; font-weight: 900; color: #0f172a;
-      margin-bottom: 16px;
-      letter-spacing: -0.02em;
-    }
-    .sec-head .sec-label {
-      display: inline-block;
-      font-family: 'Manrope', 'Segoe UI', sans-serif;
-      font-size: 14px;
-      font-weight: 900;
-      letter-spacing: 0.18em;
-      color: #0058bc;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
-    .sec-head .divider { width: 56px; height: 4px; background: #0058bc; border-radius: 2px; }
-    .sec-head p { margin-top: 18px; font-size: 16px; line-height: 1.75; color: #44474d; max-width: 680px; }
-
-    /* ═════════════════════════════════════
-       CARDS (BUSINESS / CAPITAL)
-       ═════════════════════════════════════ */
-    .grid-4 { display: grid; grid-template-columns: 1fr; gap: 20px; }
-    .grid-3 { display: grid; grid-template-columns: 1fr; gap: 28px; }
-    .grid-2 { display: grid; grid-template-columns: 1fr; gap: 20px; }
-    @media (min-width: 640px) { .grid-4 { grid-template-columns: repeat(2, 1fr); } }
-    @media (min-width: 768px) {
-      .grid-4 { grid-template-columns: repeat(2, 1fr); }
-      .grid-3 { grid-template-columns: repeat(3, 1fr); }
-      .grid-2 { grid-template-columns: repeat(3, 1fr); }
-    }
-    @media (min-width: 1024px) {
-      .grid-4 { grid-template-columns: repeat(4, 1fr); }
-    }
-    .card {
-      position: relative; overflow: hidden;
-      background: #fff; border: 1px solid rgba(0,0,0,0.06);
-      border-radius: 18px; padding: 30px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
-      transition: box-shadow 0.25s, transform 0.25s;
-    }
-    .card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.08); transform: translateY(-5px); }
-    .card-icon {
-      width: 50px; height: 50px; border-radius: 14px;
-      background: #eff6ff; display: flex; align-items: center; justify-content: center;
-      margin-bottom: 18px;
-    }
-    .card-icon svg { width: 26px; height: 26px; }
-    .card h3 { font-family: 'Manrope', 'Segoe UI', sans-serif; font-size: 18px; font-weight: 900; color: #1b1b1d; margin-bottom: 10px; }
-    .card p { font-size: 14px; line-height: 1.75; color: #44474d; }
-
-    /* Numbered cards (Capital) */
-    .card-num { position: relative; overflow: hidden; }
-    .card-num .num { font-family: 'Manrope', 'Segoe UI', sans-serif; font-size: 34px; font-weight: 900; color: #0058bc; margin-bottom: 10px; }
-    .card-bg-icon {
-      position: absolute;
-      right: -60px;
-      bottom: -60px;
-      width: 260px;
-      height: 260px;
-      opacity: 0.06;
-      pointer-events: none;
-      color: #0058bc;
-    }
-
-    /* ═════════════════════════════════════
-       TECH CARDS (circular icon)
-       ═════════════════════════════════════ */
-    .tech-card { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 18px; }
-    .tech-icon {
-      width: 76px; height: 76px; border-radius: 50%;
-      background: #0058bc; display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 4px 14px rgba(0,88,188,0.22);
-    }
-    .tech-icon svg { width: 34px; height: 34px; }
-    .tech-card h4 { font-family: 'Manrope', 'Segoe UI', sans-serif; font-size: 20px; font-weight: 700; color: #1b1b1d; }
-    .tech-card p { font-size: 14px; line-height: 1.75; color: #44474d; max-width: 320px; }
-
-    /* ═════════════════════════════════════
-       GLOBAL SECTION (dark bg)
-       ═════════════════════════════════════ */
-    .sec-dark { background: #0f172a; color: #fff; }
-    .sec-dark .sec-head h2 { color: #fff; }
-    .sec-dark .sec-head p { color: rgba(255,255,255,0.58); }
-    .globe-card {
-      background: rgba(255,255,255,0.05);
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(255,255,255,0.10);
-      border-radius: 18px; padding: 18px;
-      transition: background 0.2s;
-    }
-    .globe-card:hover { background: rgba(255,255,255,0.10); }
-    .globe-card .code { font-family: 'Manrope', 'Segoe UI', sans-serif; font-size: 28px; font-weight: 900; color: #60a5fa; letter-spacing: 0.12em; margin-bottom: 2px; }
-    .globe-card .country { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-    .status-tag {
-      font-size: 9px;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 2px 8px;
-      border-radius: 999px;
-      background: rgba(96,165,250,0.15);
-      color: #60a5fa;
-      border: 1px solid rgba(96,165,250,0.25);
-    }
-    .globe-card .country { font-size: 12px; font-weight: 800; color: #60a5fa; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 10px; }
-    .globe-card h4 { font-family: 'Manrope', 'Segoe UI', sans-serif; font-size: 18px; font-weight: 900; margin-bottom: 8px; }
-    .globe-card p { font-size: 13px; line-height: 1.75; color: rgba(255,255,255,0.58); }
-
-    .shareholder {
-      margin-top: 52px; padding-top: 36px;
-      border-top: 1px solid rgba(255,255,255,0.10);
-      display: flex; flex-direction: column; gap: 16px;
-      align-items: center; text-align: center;
-    }
-    @media (min-width: 768px) {
-      .shareholder { flex-direction: row; justify-content: space-between; text-align: left; }
-    }
-    .shareholder .lbl { font-size: 10px; font-weight: 700; letter-spacing: 0.15em; color: rgba(255,255,255,0.38); text-transform: uppercase; }
-    .shareholder .name { font-size: 22px; font-weight: 900; letter-spacing: 0.08em; color: rgba(255,255,255,0.92); }
-    .shareholder .desc { font-size: 13px; color: rgba(255,255,255,0.38); max-width: 420px; }
-
-    /* ═════════════════════════════════════
-       CTA SECTION
-       ═════════════════════════════════════ */
-    .cta-wrap {
-      max-width: 880px; margin: 0 auto;
-      background: #0058bc; border-radius: 24px;
-      padding: 48px 28px; position: relative; overflow: hidden;
-      box-shadow: 0 12px 40px rgba(0,88,188,0.28);
-    }
-    @media (min-width: 768px) { .cta-wrap { padding: 60px 64px; } }
-    .cta-wrap h2 {
-      font-family: 'Manrope', 'Segoe UI', sans-serif;
-      font-size: 34px; font-weight: 900; color: #fff;
-      margin-bottom: 18px; line-height: 1.25;
-      text-align: center;
-    }
-    .cta-wrap > p { font-size: 16px; line-height: 1.75; color: rgba(255,255,255,0.82); max-width: 640px; margin: 0 auto 36px; text-align: center; }
-    .cta-cards { display: flex; flex-direction: column; gap: 14px; }
-    @media (min-width: 640px) { .cta-cards { flex-direction: row; align-items: stretch; } }
-    .cta-card {
-      display: flex; align-items: flex-start; gap: 14px;
-      background: rgba(255,255,255,0.10);
-      border: 1px solid rgba(255,255,255,0.18);
-      border-radius: 14px; padding: 16px 20px;
-      transition: background 0.2s;
-      min-width: 0;
-    }
-    .cta-card:hover { background: rgba(255,255,255,0.15); }
-    .cta-card svg { flex-shrink: 0; width: 24px; height: 24px; margin-top: 2px; }
-    .cta-card .lbl { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; color: rgba(255,255,255,0.58); text-transform: uppercase; }
-    .cta-card .val { font-weight: 700; font-size: 14px; color: #fff; }
-    /* Email: keep single line, do not compress */
-    .cta-email { flex: 0 0 auto; }
-    .cta-email .val { white-space: nowrap; }
-    /* Address: take remaining space, allow multi-line */
-    .cta-address { flex: 1 1 auto; }
-    .cta-address .val { line-height: 1.6; word-break: normal; }
-
-    /* ═════════════════════════════════════
-       FOOTER
-       ═════════════════════════════════════ */
-    .footer { background: #f8fafc; border-top: 1px solid #e2e8f0; }
-    .footer-inner {
-      max-width: 1200px; margin: 0 auto;
-      padding: 52px 20px 0;
-      display: grid; grid-template-columns: 1fr; gap: 32px;
-    }
-    @media (min-width: 768px) { .footer-inner { grid-template-columns: 2fr repeat(3, 1fr); } }
-    .footer-brand img { height: 30px; margin-bottom: 14px; }
-    .footer-brand p { font-size: 13px; color: #64748b; max-width: 260px; line-height: 1.7; }
-    .footer-col h5 { font-size: 11px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #1b1b1d; margin-bottom: 16px; }
-    .footer-col li { margin-bottom: 10px; }
-    .footer-col a { font-size: 13px; color: #64748b; transition: color 0.15s; }
-    .footer-col a:hover { color: #1b1b1d; }
-    .footer-bot {
-      max-width: 1200px; margin: 0 auto;
-      border-top: 1px solid #e2e8f0;
-      padding: 20px; text-align: center;
-      font-size: 13px; color: #64748b; margin-top: 40px;
-    }
-
-    /* ═════════════════════════════════════
-       CAPITAL HEADER BADGE
-       ═════════════════════════════════════ */
-    .cap-header {
-      display: flex; flex-direction: column; gap: 20px;
-      margin-bottom: 52px;
-    }
-    @media (min-width: 768px) {
-      .cap-header { flex-direction: row; justify-content: space-between; align-items: flex-end; }
-    }
-    .cap-badge {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: #eff6ff; border-radius: 999px; padding: 8px 18px;
-    }
-    .cap-badge svg { width: 18px; height: 18px; }
-    .cap-badge span { font-family: 'Manrope', 'Segoe UI', sans-serif; font-size: 13px; font-weight: 800; color: #0058bc; }
-
-    /* ═════════════════════════════════════
-       CAPITAL CARDS — 2-col, full-width
-       ═════════════════════════════════════ */
-    .cap-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 24px;
-    }
-    @media (min-width: 768px) {
-      .cap-grid { grid-template-columns: 1fr 1fr; }
-    }
-    .cap-card {
-      position: relative; overflow: hidden;
-      background: #fff; border: 1px solid rgba(0,0,0,0.06);
-      border-radius: 18px; padding: 36px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
-      transition: box-shadow 0.25s, transform 0.25s;
-    }
-    .cap-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.08); transform: translateY(-5px); }
-    .cap-card-icon {
-      width: 50px; height: 50px; border-radius: 14px;
-      background: #eff6ff; display: flex; align-items: center; justify-content: center;
-      margin-bottom: 18px;
-    }
-    .cap-card-icon svg { width: 26px; height: 26px; }
-    .cap-card h3 { font-family: 'Manrope', 'Segoe UI', sans-serif; font-size: 20px; font-weight: 900; color: #1b1b1d; margin-bottom: 10px; }
-    .cap-card p { font-size: 14px; line-height: 1.75; color: #44474d; }
-
-    /* ═════════════════════════════════════
-       RESPONSIVE NAV
-       ═════════════════════════════════════ */
-    @media (min-width: 768px) {
-      .nav-links { display: flex; }
-      .nav-cta { display: inline-block; }
-      .menu-btn { display: none; }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/design-system.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/global.css">
 </head>
 <body>
-
-  <!-- ═════════════════════════════════════
-       NAVBAR (transparent → solid on scroll)
-       ═════════════════════════════════════ -->
-  <header id="navbar" class="nav-transparent">
-    <div class="nav-inner">
-      <a href="#hero">
-        <!-- White logo (shown when navbar is transparent/on-hero) -->
-        <img src="images/apex_logo_white.png" alt="Apex Arbor" class="nav-logo" id="nav-logo-white">
-        <!-- Blue logo (hidden by default, shown when scrolled) -->
-        <img src="images/apex-logo-blue.png" alt="Apex Arbor" class="nav-logo" id="nav-logo-blue">
+  <!-- ANNOUNCEMENT BAR -->
+  <div class="announcement-bar" data-reveal="fade-down">
+    <div class="container announcement-content">
+      <span class="announcement-badge">New</span>
+      <p class="announcement-text">Apex Arbor achieves 96% cluster utilization with self-developed scheduling system</p>
+      <a href="#why-us" class="announcement-link">
+        Learn More
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
       </a>
-      <div class="nav-links">
-        <a href="#hero" class="active">About Us</a>
-        <a href="#business">Core Business</a>
-        <a href="#technology">Technology</a>
-        <a href="#capital">Capital Strength</a>
-        <a href="#global">Global Presence</a>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav id="navbar" class="navbar">
+    <div class="container nav-inner">
+      <a href="/" class="nav-logo">Apex Arbor</a>
+      <div class="nav-menu">
+        <ul class="nav-links">
+          <li class="nav-item has-dropdown">
+            <a href="#platform" class="nav-link">Platform</a>
+            <ul class="dropdown">
+<li><a href="#platform">AI Cloud Platform</a></li>
+              <li><a href="#products">GPU Compute</a></li>
+              <li><a href="#products">CPU Compute</a></li>
+              <li><a href="#products">Bare Metal</a></li>
+            </ul>
+          </li>
+          <li class="nav-item has-dropdown">
+            <a href="#products" class="nav-link">Products</a>
+            <ul class="dropdown">
+              <li><a href="#products">NVIDIA Blackwell</a></li>
+              <li><a href="#products">NVIDIA Hopper</a></li>
+              <li><a href="#products">NVIDIA Ada</a></li>
+              <li><a href="#products">Networking</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a href="#why-us" class="nav-link">Why Us</a></li>
+          <li class="nav-item"><a href="#global" class="nav-link">Global</a></li>
+          <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
       </div>
-      <a href="#contact" class="nav-cta">Contact Us</a>
-      <button class="menu-btn" id="mobile-toggle" aria-label="Toggle menu">
-        <svg id="menu-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+      <a href="#contact" class="btn btn-primary nav-cta">Get Started</a>
+      <button class="menu-btn" aria-label="Toggle menu">
+        <span class="hamburger"></span>
       </button>
     </div>
-    <div id="mobile-menu">
-      <a href="#hero">About Us</a>
-      <a href="#business">Core Business</a>
-      <a href="#technology">Technology</a>
-      <a href="#capital">Capital Strength</a>
-      <a href="#global">Global Presence</a>
-      <a href="#contact" style="display:block;text-align:center;margin:12px;background:#0058bc;color:#fff;padding:12px;border-radius:8px;">Contact Us</a>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <!-- Video Background -->
+    <div class="hero-video-bg">
+      <video autoplay muted loop playsinline class="hero-video">
+        <source src="https://assets.mixkit.co/videos/preview/mixkit-abstract-technology-network-grid-animation-32845-large.mp4" type="video/mp4">
+      </video>
+      <div class="hero-video-overlay"></div>
     </div>
-  </header>
-
-  <!-- ═════════════════════════════════════
-       HERO
-       ═════════════════════════════════════ -->
-  <section class="hero" id="hero">
-    <div class="hero-grid"></div>
-
-    <!-- Hero content: LEFT aligned, max-width constrained -->
-    <div class="hero-inner">
-      <!-- Badge -->
-      <div class="hero-badge">
-        <span>SG</span><span class="dot"></span>
-        <span>TH</span><span class="dot"></span>
-        <span>MY</span>
-        <span class="label">&nbsp;&nbsp;PAN-ASIA INFRASTRUCTURE</span>
-      </div>
-
-      <!-- Main headline — large, left-aligned -->
-      <h1>Powering the AI Era with<span class="br-desktop"><br></span><span class="br-mobile"> </span>Intelligent Computing Infrastructure</h1>
-
-      <!-- Subtitle -->
-      <p>A comprehensive AI computing service provider specializing in Southeast Asia — dedicated to building an Asia-Pacific computing hub and delivering top-tier global AI computing infrastructure through high-end GPU clusters and cloud computing services.</p>
-    </div>
-
-    <!-- Bottom Bar: Buttons LEFT | Stats RIGHT -->
-    <div class="hero-bar">
-      <div class="hero-btns">
-        <a href="#business" class="btn-primary">
-          Learn More
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M5 12h14M13 6l6 6-6 6"/>
+    
+    <!-- Animated Grid Background -->
+    <div class="hero-bg"></div>
+    <div class="hero-gradient"></div>
+    
+    <!-- Particle Overlay -->
+    <div class="hero-particles" id="heroParticles"></div>
+    
+    <!-- Hero Carousel -->
+    <div class="hero-carousel">
+      <div class="carousel-container">
+        <div class="carousel-slides">
+          <!-- Slide 1 -->
+          <div class="carousel-slide active">
+            <div class="container hero-content">
+              <span class="hero-badge">Southeast Asia's AI Computing Partner</span>
+              <h1 class="hero-title">
+                Powering the <span class="gradient-text">AI Era</span>
+              </h1>
+              <p class="hero-subtitle">
+                High-Performance GPU Cloud — NVIDIA Blackwell & Hopper Architecture
+              </p>
+              <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">Get Computing Solution</a>
+                <a href="#platform" class="btn btn-secondary">Explore Platform</a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Slide 2 -->
+          <div class="carousel-slide">
+            <div class="container hero-content">
+              <span class="hero-badge">NVIDIA Blackwell & Hopper Architecture</span>
+              <h1 class="hero-title">
+                High-Performance <span class="gradient-text">GPU Cloud</span>
+              </h1>
+              <p class="hero-subtitle">
+                Access the latest NVIDIA GPUs with breakthrough price performance for AI training and inference workloads.
+              </p>
+              <div class="hero-buttons">
+                <a href="#products" class="btn btn-primary">View GPU Options</a>
+                <a href="#why-us" class="btn btn-secondary">Why Choose Us</a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Slide 3 -->
+          <div class="carousel-slide">
+            <div class="container hero-content">
+              <span class="hero-badge">Trusted by Industry Leaders</span>
+              <h1 class="hero-title">
+                Enterprise-Grade <span class="gradient-text">AI Infrastructure</span>
+              </h1>
+              <p class="hero-subtitle">
+                Deep local knowledge across Southeast Asia with multinational compliance and 24/7 technical support.
+              </p>
+              <div class="hero-buttons">
+                <a href="#global" class="btn btn-primary">Our Locations</a>
+                <a href="#contact" class="btn btn-secondary">Partner With Us</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Carousel Controls -->
+        <button class="carousel-control prev" aria-label="Previous slide">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M15 18l-6-6 6-6"/>
           </svg>
-        </a>
-        <a href="#contact" class="btn-secondary">Contact Us</a>
-      </div>
-
-      <div class="hero-stats-row">
-        <div>
-          <div class="stat-num">3</div>
-          <div class="stat-lbl">Regional Offices</div>
-        </div>
-        <div>
-          <div class="stat-num">24×7</div>
-          <div class="stat-lbl">Infrastructure Operations</div>
-        </div>
-        <div>
-          <div class="stat-num">Full-Chain</div>
-          <div class="stat-lbl">Self-Operated Closed-Loop System</div>
+        </button>
+        <button class="carousel-control next" aria-label="Next slide">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
+        </button>
+        
+        <!-- Carousel Indicators -->
+        <div class="carousel-indicators">
+          <button class="indicator active" data-slide="0" aria-label="Go to slide 1"></button>
+          <button class="indicator" data-slide="1" aria-label="Go to slide 2"></button>
+          <button class="indicator" data-slide="2" aria-label="Go to slide 3"></button>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═════════════════════════════════════
-       CORE BUSINESS
-       ═════════════════════════════════════ -->
-  <section class="section" id="business">
-    <div class="sec-inner">
-      <div class="sec-head">
-        <span class="sec-label">Core Business</span>
-        <h2>Full-Chain AI Computing Services Provider</h2>
-        <div class="divider"></div>
-        <p>Specializing in computing power services, we integrate premium industry resources to deliver end-to-end computing solutions for AI enterprises and large model providers—delivering computing value through a professional and standardized service system.</p>
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <h3 class="stat-number">3</h3>
+          <p class="stat-label">Regional Offices</p>
+        </div>
+        <div class="stat-item">
+          <h3 class="stat-number">24/7</h3>
+          <p class="stat-label">Infrastructure Operations</p>
+        </div>
+        <div class="stat-item">
+          <h3 class="stat-number">10K+</h3>
+          <p class="stat-label">GPU Cluster Experience</p>
+        </div>
+        <div class="stat-item">
+          <h3 class="stat-number">96%</h3>
+          <p class="stat-label">Cluster Utilization</p>
+        </div>
       </div>
-      <div class="grid-3">
-        <!-- 1 -->
-        <div class="card">
-          <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0058bc" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M8 2v4M16 2v4M6 10h4M14 10h4M6 14h12M6 18h8"/></svg></div>
-          <h3>High-End GPU Cluster Deployment</h3>
-          <p>Batch-procure cutting-edge GPU servers, completing cross-border customs clearance, hardware integration, and on-site rack deployment — rapidly delivering production-grade computing capacity.</p>
-          <svg class="card-bg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 15h3M1 9h3M1 15h3"/></svg>
+    </div>
+  </div>
+
+  <!-- CUSTOMER LOGO SCROLL SECTION -->
+  <section class="logo-section">
+    <div class="logo-scroll-container">
+      <div class="logo-scroll-track">
+        <!-- Original logos -->
+        <div class="logo-item">
+          <span class="logo-text">TechCorp</span>
         </div>
-        <!-- 2 -->
-        <div class="card">
-          <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0058bc" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 3v18"/></svg></div>
-          <h3>AI Cloud Computing Services</h3>
-          <p>Provide on-demand GPU leasing for AI large model training & inference, cloud rendering, scientific simulation, and enterprise AI cloud migration — with on-demand delivery and flexible billing.</p>
-          <svg class="card-bg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z"/></svg>
+        <div class="logo-item">
+          <span class="logo-text">AI Labs</span>
         </div>
-        <!-- 3 -->
-        <div class="card">
-          <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0058bc" stroke-width="2"><path d="M16 3h5v5M4 20L21 3M21 16v5h-5M3 4l17 17"/></svg></div>
-          <h3>Computing Ecosystem Partner Network</h3>
-          <p>Integrate mainstream cloud service providers and computing platforms across the Asia-Pacific region to build an elastic computing ecosystem—delivering on-demand scheduling, flexible scaling, and optimal computing solutions tailored for customers.</p>
-          <svg class="card-bg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M16 3h5v5M4 20L21 3M21 16v5h-5M3 4l17 17"/></svg>
+        <div class="logo-item">
+          <span class="logo-text">DataFlow</span>
         </div>
-        <!-- 4 -->
-        <div class="card">
-          <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0058bc" stroke-width="2"><path d="M12 15v3M8 15h8M5 15V5a2 2 0 012-2h10a2 2 0 012 2v10"/><path d="M3 15h18v2a2 2 0 01-2 2H5a2 2 0 01-2-2v-2"/></svg></div>
-          <h3>Customized Industry Computing Solutions</h3>
-          <p>Provide one-stop customized computing power solutions for high-performance computing scenarios such as big data analysis, digital infrastructure, and enterprise AI hosting.</p>
-          <svg class="card-bg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <div class="logo-item">
+          <span class="logo-text">CloudScale</span>
         </div>
-        <!-- 5 -->
-        <div class="card">
-          <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0058bc" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
-          <h3>24×7 Professional Computing Support</h3>
-          <p>Provide round-the-clock computing power support, encompassing GPU cluster monitoring, performance optimization, rapid fault response, and elastic scaling capabilities—ensuring customer business continuity and high computing availability through professional service expertise.</p>
-          <svg class="card-bg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        <div class="logo-item">
+          <span class="logo-text">NeuralNet</span>
         </div>
-        <!-- 6 -->
-        <div class="card">
-          <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0058bc" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-          <h3>Global Compliance &amp; Data Security Assurance</h3>
-          <p>With in-depth understanding of compliance standards and data security requirements in major markets across Southeast Asia and Northeast Asia, delivering computing solutions compliant with local regulations — building a trust fortress through compliance capabilities.</p>
-          <svg class="card-bg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <div class="logo-item">
+          <span class="logo-text">QuantumAI</span>
+        </div>
+        <!-- Duplicated for seamless loop -->
+        <div class="logo-item">
+          <span class="logo-text">TechCorp</span>
+        </div>
+        <div class="logo-item">
+          <span class="logo-text">AI Labs</span>
+        </div>
+        <div class="logo-item">
+          <span class="logo-text">DataFlow</span>
+        </div>
+        <div class="logo-item">
+          <span class="logo-text">CloudScale</span>
+        </div>
+        <div class="logo-item">
+          <span class="logo-text">NeuralNet</span>
+        </div>
+        <div class="logo-item">
+          <span class="logo-text">QuantumAI</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═════════════════════════════════════
-       TECHNOLOGY
-       ═════════════════════════════════════ -->
-  <section class="section" id="technology" style="background:#efedef;">
-    <div class="sec-inner">
-      <div class="sec-head" style="text-align:center;max-width:720px;margin:0 auto 56px;">
-        <span class="sec-label">Technical Expertise</span>
-        <h2>World-Class Core Technology Team</h2>
-        <div class="divider" style="margin-left:auto;margin-right:auto;"></div>
-        <p>Core members hail from global top-tier technology enterprises, with deep expertise in cloud computing architecture, distributed computing scheduling, cross-regional networking, and data security governance. The team has accumulated extensive hands-on project experience across multiple Southeast Asian markets.</p>
+  <!-- PLATFORM SECTION -->
+  <section id="platform" class="section platform-section">
+    <div class="container">
+      <div class="section-header" data-reveal="fade-up">
+        <span class="section-tag">PLATFORM</span>
+        <h2>AI Cloud Platform</h2>
+        <p>A modern cloud built for AI workloads — delivering breakthrough price performance for training and inference.</p>
       </div>
-      <div class="grid-3" style="max-width:900px;margin:0 auto;">
-        <div class="tech-card">
-          <div class="tech-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 1v4M15 1v4M1 9h22M9 15h6"/></svg></div>
-          <h4>Ten-Thousand-GPU Cluster Practical Experience</h4>
-          <p>The core team possesses complete hands-on experience in ten-thousand-GPU cluster deployment — from hardware integration to production optimization, with large-scale computing delivery projects across multiple Southeast Asian markets — providing stable computing support for high-load scenarios such as foundation model training.</p>
+      <div class="platform-grid stagger-grid">
+        <div class="platform-card" data-reveal="scale-in">
+          <div class="platform-icon">⚡</div>
+          <h3>High Performance</h3>
+          <p>Industry-leading GPU utilization with InfiniBand networking and bare metal performance.</p>
         </div>
-        <div class="tech-card">
-          <div class="tech-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
-          <h4>Self-Developed Computing Power Scheduling Engine</h4>
-          <p>Self-developed computing orchestration and scheduling system, deployed and validated across multiple data centers in Southeast Asia — effectively improving GPU utilization, reducing idle waste, and dynamically allocating resources to continuously reduce costs and increase throughput for clients.</p>
+        <div class="platform-card" data-reveal="scale-in">
+          <div class="platform-icon">🎯</div>
+          <h3>AI-Optimized</h3>
+          <p>Purpose-built infrastructure for large model training, fine-tuning, and inference workloads.</p>
         </div>
-        <div class="tech-card">
-          <div class="tech-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/><path d="M9 12l2 2 4-4"/></svg></div>
-          <h4>24×7 Technical Delivery &amp; Assurance</h4>
-          <p>The core team has deeply participated in computing project delivery across multiple Southeast Asian markets, with in-depth knowledge of local compliance and operational standards — enabling cross-timezone rapid response and ensuring uninterrupted business operations.</p>
+        <div class="platform-card" data-reveal="scale-in">
+          <div class="platform-icon">💰</div>
+          <h3>Cost Efficient</h3>
+          <p>Up to 80% cost reduction compared to general-purpose clouds for AI workloads.</p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═════════════════════════════════════
-       CAPITAL STRENGTH
-       ═════════════════════════════════════ -->
-  <section class="section" id="capital">
-    <div class="sec-inner">
-      <div class="cap-header">
-        <div class="sec-head" style="margin-bottom:0;">
-          <span class="sec-label">Capital Strength</span>
-          <h2>Capital Strength &amp; Financial Advantage</h2>
-          <div class="divider"></div>
-          <p>Integrating premium industry resources and institutional partnerships, with the capability to sustain large-scale computing service delivery.</p>
-        </div>
-        <div class="cap-badge">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#0058bc" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg>
-          <span>Institutional Partnerships</span>
-        </div>
-      </div>
-      <div class="cap-grid">
-        <div class="cap-card">
-          <div class="cap-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0058bc" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg></div>
-          <h3>Rich Partnership Experience with Major Financial Institutions</h3>
-          <p>The core team has deep roots in the Asia-Pacific market, maintaining close partnerships with major banks, financial leasing institutions, and industry funds — with extensive experience in cross-border computing project financing and structured cooperation.</p>
-        </div>
-        <div class="cap-card">
-          <div class="cap-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0058bc" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
-          <h3>Focused Target Markets</h3>
-          <p>Focused on three core markets — Southeast Asia, Northeast Asia, and the Middle East — committed to becoming the most professional and trustworthy AI computing services partner in the region.</p>
+        <div class="platform-card" data-reveal="scale-in">
+          <div class="platform-icon">🚀</div>
+          <h3>Rapid Deployment</h3>
+          <p>From provisioning to production in hours, not weeks — with on-demand scaling.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═════════════════════════════════════
-       GLOBAL PRESENCE
-       ═════════════════════════════════════ -->
-  <section class="section sec-dark" id="global">
-    <div class="sec-inner">
-      <div class="sec-head">
-        <span class="sec-label">Global Presence</span>
-        <h2>Localized Presence Across Asia-Pacific Core Markets</h2>
-        <div class="divider" style="background:#0058bc;"></div>
-        <p>Building a pan-Asia computing network with subsidiaries in Malaysia and Thailand, and headquarters planned in Singapore — each entity possessing independent legal status and cross-border settlement capabilities. Aligned with national industrial policies to build a rare multinational compliance fortress.</p>
+  <!-- PRODUCTS SECTION -->
+  <section id="products" class="section products-section">
+    <div class="container">
+      <div class="section-header" data-reveal="fade-up">
+        <span class="section-tag">PRODUCTS</span>
+        <h2>Compute Infrastructure</h2>
+        <p>Access the latest NVIDIA GPUs and networking technology for your most demanding AI workloads.</p>
       </div>
-      <div class="grid-3">
-        <div class="globe-card"><div class="code">SG</div><div class="country">Singapore <span class="status-tag">Planned</span></div><h4>Global Headquarters</h4><p>The planned strategic hub for group governance, capital allocation, and investor relations — rooted in Asia's premier financial and technology innovation center.</p></div>
-        <div class="globe-card"><div class="code">TH</div><div class="country">Thailand <span class="status-tag">In Progress</span></div><h4>Bangkok Office</h4><p>Leveraging Thailand's BOI (Board of Investment) preferential policies — driving regional computing deployment through favorable tax and regulatory frameworks.</p></div>
-        <div class="globe-card"><div class="code">MY</div><div class="country">Malaysia <span class="status-tag">Operational</span></div><h4>Kuala Lumpur Office</h4><p>Aligning with MDEC (Malaysia Digital Economy Corporation) — accelerating infrastructure expansion through Malaysia's digital economy policies.</p></div>
-      </div>
-      <div class="shareholder">
-        <div><div class="lbl">Key Investor</div><div class="name">AFFIRMA CAPITAL</div></div>
-        <div class="desc">Secured investment and strategic backing from Affirma Capital since our founding — a strong validation of our vision and market position in the AI computing sector.</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═════════════════════════════════════
-       CTA / CONTACT
-       ═════════════════════════════════════ -->
-  <section class="section" id="contact">
-    <div class="cta-wrap">
-      <div style="position:absolute;right:-20px;top:-20px;opacity:0.05;pointer-events:none;"><svg width="180" height="180" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="0.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h4M18 12h4M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg></div>
-      <h2>Building the Future Together</h2>
-      <p>Whether you are an enterprise in need of computing services, a partner seeking technical collaboration, or an investor focused on the AI computing sector — we look forward to connecting with you.</p>
-      <div class="cta-cards">
-        <a href="mailto:apexarbor@apexarbor.ai" class="cta-card cta-email">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M2 5l10 7 10-7"/></svg>
-          <div><div class="lbl">Email</div><div class="val">apexarbor@apexarbor.ai</div></div>
-        </a>
-        <div class="cta-card cta-address">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
-          <div><div class="lbl">Bangkok Office</div><div class="val">Room3403, The Ninth Tower Building A, Rama 9 Road, Huaykwang District, Bangkok Thailand</div></div>
+      <div class="products-grid stagger-grid">
+        <div class="product-card" data-reveal="scale-in">
+          <div class="product-badge">Latest</div>
+          <h3>NVIDIA Blackwell</h3>
+          <p class="product-desc">Next-generation GPU architecture for trillion-parameter models</p>
+          <ul class="product-specs">
+            <li>B200, GB200 GPUs</li>
+            <li>192GB HBM3e memory</li>
+            <li>8TB/s memory bandwidth</li>
+            <li>FP4, FP8 precision</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline">Learn More</a>
+        </div>
+        <div class="product-card" data-reveal="scale-in">
+          <h3>NVIDIA Hopper</h3>
+          <p class="product-desc">Industry-leading performance for AI training and inference</p>
+          <ul class="product-specs">
+            <li>H100, H200 GPUs</li>
+            <li>80GB HBM3 memory</li>
+            <li>3.35TB/s bandwidth</li>
+            <li>Transformer Engine</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline">Learn More</a>
+        </div>
+        <div class="product-card" data-reveal="scale-in">
+          <h3>NVIDIA Ada Lovelace</h3>
+          <p class="product-desc">Efficient inference and graphics workloads</p>
+          <ul class="product-specs">
+            <li>L40S, L4 GPUs</li>
+            <li>48GB GDDR6 memory</li>
+            <li>AV1 encoding</li>
+            <li>RT cores for rendering</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline">Learn More</a>
+        </div>
+        <div class="product-card" data-reveal="scale-in">
+          <h3>CPU Compute</h3>
+          <p class="product-desc">High-performance CPUs for data preprocessing</p>
+          <ul class="product-specs">
+            <li>AMD EPYC, Intel Xeon</li>
+            <li>Up to 128 cores</li>
+            <li>2TB+ RAM options</li>
+            <li>100GbE networking</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline">Learn More</a>
+        </div>
+        <div class="product-card" data-reveal="scale-in">
+          <h3>Bare Metal</h3>
+          <p class="product-desc">Dedicated servers for maximum performance</p>
+          <ul class="product-specs">
+            <li>Single-tenant hardware</li>
+            <li>No hypervisor overhead</li>
+            <li>Direct InfiniBand access</li>
+            <li>Custom configurations</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline">Learn More</a>
+        </div>
+        <div class="product-card" data-reveal="scale-in">
+          <h3>Networking</h3>
+          <p class="product-desc">High-speed interconnect for distributed training</p>
+          <ul class="product-specs">
+            <li>InfiniBand NDR/XDR</li>
+            <li>400/800 GbE options</li>
+            <li>RDMA support</li>
+            <li>Sub-microsecond latency</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline">Learn More</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═════════════════════════════════════
-       FOOTER
-       ═════════════════════════════════════ -->
-  <footer class="footer">
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <img src="images/apex-logo-blue.png" alt="Apex Arbor">
-        <p>A global, capitalization-ready AI computing services provider — delivering professional computing services across the Asia-Pacific region with enterprise-grade governance standards.</p>
+  <!-- WHY US SECTION -->
+  <section id="why-us" class="section why-section">
+    <div class="container">
+      <div class="section-header" data-reveal="fade-up">
+        <span class="section-tag">WHY APEX ARBOR</span>
+        <h2>World-Class Expertise</h2>
+        <p>Core members from global top-tier technology enterprises with proven track records.</p>
       </div>
-      <div class="footer-col"><h5>Company</h5><ul><li><a href="#hero">About Us</a></li><li><a href="#technology">Technology Team</a></li><li><a href="#global">Global Presence</a></li></ul></div>
-      <div class="footer-col"><h5>Services</h5><ul><li><a href="#business">GPU Computing</a></li><li><a href="#business">Cloud Computing</a></li><li><a href="#business">Industry Solutions</a></li><li><a href="#business">24×7 Support</a></li></ul></div>
-      <div class="footer-col"><h5>Contact</h5><ul><li><a href="mailto:apexarbor@apexarbor.ai">apexarbor@apexarbor.ai</a></li></ul></div>
+      <div class="why-grid stagger-grid">
+        <div class="why-item" data-reveal="scale-in">
+          <div class="why-number">10K+</div>
+          <h3>Ten-Thousand-GPU Scale</h3>
+          <p>Complete hands-on experience in ten-thousand-GPU cluster deployment — from hardware integration to production optimization, with large-scale computing delivery projects across multiple Southeast Asian markets.</p>
+        </div>
+        <div class="why-item" data-reveal="scale-in">
+          <div class="why-number">96%</div>
+          <h3>Self-Developed Scheduling</h3>
+          <p>Self-developed computing orchestration and scheduling system, deployed and validated across multiple Southeast Asian data centers — effectively improving GPU utilization and reducing idle waste.</p>
+        </div>
+        <div class="why-item" data-reveal="scale-in">
+          <div class="why-number">24/7</div>
+          <h3>Technical Support</h3>
+          <p>Deep participation in computing project delivery across multiple Southeast Asian markets, with in-depth knowledge of local compliance and operational standards — enabling cross-timezone rapid response.</p>
+        </div>
+      </div>
     </div>
-    <div class="footer-bot">&copy; 2025 Apex Arbor Holding Limited. All rights reserved.</div>
+  </section>
+
+  <!-- TRUST SECTION -->
+  <section class="section trust-section">
+    <div class="container">
+      <div class="section-header" data-reveal="fade-up">
+        <span class="section-tag">TRUST CENTER</span>
+        <h2>Enterprise-Grade Security & Compliance</h2>
+        <p>Built on a foundation of security, compliance, and operational excellence.</p>
+      </div>
+      <div class="trust-grid stagger-grid">
+        <div class="trust-item" data-reveal="scale-in">
+          <div class="trust-icon">🔒</div>
+          <h3>Data Security</h3>
+          <p>Multi-layer security architecture with encryption at rest and in transit, isolated networks, and strict access controls.</p>
+        </div>
+        <div class="trust-item" data-reveal="scale-in">
+          <div class="trust-icon">✅</div>
+          <h3>Compliance</h3>
+          <p>SOC 2 Type II, ISO 27001, GDPR compliant — meeting the highest standards for data protection and privacy.</p>
+        </div>
+        <div class="trust-item" data-reveal="scale-in">
+          <div class="trust-icon">🌐</div>
+          <h3>Regional Compliance</h3>
+          <p>Deep understanding of local regulations across Southeast Asia — PDPA, data sovereignty, and cross-border transfer compliance.</p>
+        </div>
+        <div class="trust-item" data-reveal="scale-in">
+          <div class="trust-icon">📊</div>
+          <h3>99.9% SLA</h3>
+          <p>Industry-leading uptime guarantee with redundant infrastructure, proactive monitoring, and rapid incident response.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWS/BLOG SECTION -->
+  <section class="section news-section">
+    <div class="container">
+      <div class="section-header" data-reveal="fade-up">
+        <span class="section-tag">INSIGHTS</span>
+        <h2>Latest News</h2>
+        <p>Stay updated with our latest announcements, partnerships, and technology innovations.</p>
+      </div>
+      <div class="news-grid stagger-grid">
+        <article class="news-card" data-reveal="scale-in">
+          <span class="news-category" data-category="product-launch">Product Launch</span>
+          <h3>Apex Arbor Unveils NVIDIA Blackwell GPU Cloud Platform</h3>
+          <p class="news-excerpt">Next-generation AI computing infrastructure with breakthrough performance for trillion-parameter models and large-scale training workloads.</p>
+          <div class="news-meta">
+            <span class="news-date">May 10, 2026</span>
+            <a href="#" class="news-link">
+              Read More
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+        <article class="news-card" data-reveal="scale-in">
+          <span class="news-category" data-category="partnership">Partnership</span>
+          <h3>Strategic Partnership with Leading Southeast Asian Data Centers</h3>
+          <p class="news-excerpt">Expanding our pan-Asia computing network through collaboration with premier data center operators across Singapore, Thailand, and Malaysia.</p>
+          <div class="news-meta">
+            <span class="news-date">April 28, 2026</span>
+            <a href="#" class="news-link">
+              Read More
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+        <article class="news-card" data-reveal="scale-in">
+          <span class="news-category" data-category="technology">Technology</span>
+          <h3>Self-Developed Scheduling System Achieves 96% Cluster Utilization</h3>
+          <p class="news-excerpt">Our proprietary GPU orchestration platform reduces idle waste and maximizes throughput for enterprise AI training and inference workloads.</p>
+          <div class="news-meta">
+            <span class="news-date">April 15, 2026</span>
+            <a href="#" class="news-link">
+              Read More
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- GLOBAL PRESENCE -->
+  <section id="global" class="section global-section">
+    <div class="container">
+      <div class="section-header" data-reveal="fade-up">
+        <span class="section-tag">GLOBAL PRESENCE</span>
+        <h2>Asia-Pacific Computing Network</h2>
+        <p>Building a pan-Asia computing network with multinational compliance and local expertise.</p>
+      </div>
+      <div class="locations-grid stagger-grid">
+        <div class="location-card" data-reveal="scale-in">
+          <div class="location-flag">🇸🇬</div>
+          <span class="location-status status-planned">Planned</span>
+          <h3>Singapore</h3>
+          <p>Global Headquarters — Strategic hub for group governance, capital allocation, and investor relations.</p>
+        </div>
+        <div class="location-card" data-reveal="scale-in">
+          <div class="location-flag">🇹🇭</div>
+          <span class="location-status status-progress">In Progress</span>
+          <h3>Thailand</h3>
+          <p>Bangkok Office — Leveraging Thailand's BOI preferential policies for regional computing deployment.</p>
+        </div>
+        <div class="location-card" data-reveal="scale-in">
+          <div class="location-flag">🇲🇾</div>
+          <span class="location-status status-operational">Operational</span>
+          <h3>Malaysia</h3>
+          <p>Kuala Lumpur Office — Aligning with MDEC to accelerate computing service deployment through digital economy policies.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section id="contact" class="section cta-section">
+    <div class="container">
+      <div class="cta-content" data-reveal="fade-up">
+        <h2>Building the Future Together</h2>
+        <p>Whether you need computing services, seek technical collaboration, or are an investor focused on AI computing — we look forward to connecting.</p>
+        <div class="cta-buttons" data-reveal="fade-up" data-delay="2">
+          <a href="mailto:contact@apexarbor.ai" class="btn btn-primary">Contact Us</a>
+          <a href="#platform" class="btn btn-secondary">View Platform</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" data-reveal="fade-up">
+    <div class="container">
+      <div class="footer-grid stagger-grid">
+        <div class="footer-brand" data-reveal="fade-in">
+          <div class="nav-logo">Apex Arbor</div>
+          <p>Southeast Asia's Premier AI Computing Infrastructure Partner</p>
+        </div>
+        <div class="footer-col" data-reveal="fade-in">
+          <h4>Platform</h4>
+          <ul>
+            <li><a href="#platform">AI Cloud Platform</a></li>
+            <li><a href="#products">GPU Compute</a></li>
+            <li><a href="#products">CPU Compute</a></li>
+            <li><a href="#products">Bare Metal</a></li>
+            <li><a href="#products">Networking</a></li>
+          </ul>
+        </div>
+        <div class="footer-col" data-reveal="fade-in">
+          <h4>Products</h4>
+          <ul>
+            <li><a href="#products">NVIDIA Blackwell</a></li>
+            <li><a href="#products">NVIDIA Hopper</a></li>
+            <li><a href="#products">NVIDIA Ada</a></li>
+            <li><a href="#why-us">Why Us</a></li>
+            <li><a href="#global">Global Presence</a></li>
+          </ul>
+        </div>
+        <div class="footer-col" data-reveal="fade-in">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#why-us">About Us</a></li>
+            <li><a href="#global">Locations</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#">Press</a></li>
+          </ul>
+        </div>
+        <div class="footer-col" data-reveal="fade-in">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#">Documentation</a></li>
+            <li><a href="#">API Reference</a></li>
+            <li><a href="#">Status</a></li>
+            <li><a href="#">Trust Center</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom" data-reveal="fade-up" data-delay="2">
+        <p>&copy; 2026 Apex Arbor Holding Limited. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookie Policy</a>
+        </div>
+        <div class="social-links">
+          <a href="#" aria-label="LinkedIn">in</a>
+          <a href="#" aria-label="Twitter">𝕏</a>
+          <a href="#" aria-label="GitHub">gh</a>
+        </div>
+      </div>
+    </div>
   </footer>
 
-  <!-- ═════════════════════════════════════
-       JS — scroll-aware nav + mobile menu
-       ═════════════════════════════════════ -->
+  <script src="js/main.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      var navbar = document.getElementById('navbar');
-      var logoWhite = document.getElementById('nav-logo-white');
-      var logoBlue  = document.getElementById('nav-logo-blue');
-      var heroSection = document.getElementById('hero');
-
-      /* ── Navbar: transparent → solid on scroll ── */
-      function updateNav() {
-        if (!navbar || !heroSection) return;
-        var scrollY = window.pageYOffset || window.scrollY;
-        var heroH   = heroSection.offsetHeight;
-        // trigger when scrolled past ~70% of hero
-        if (scrollY > 10) {
-          navbar.classList.add('nav-solid');
-          navbar.classList.remove('nav-transparent');
-          if (logoWhite) logoWhite.style.display = 'none';
-          if (logoBlue)  logoBlue.style.display  = 'block';
-        } else {
-          navbar.classList.remove('nav-solid');
-          navbar.classList.add('nav-transparent');
-          if (logoWhite) logoWhite.style.display = 'block';
-          if (logoBlue)  logoBlue.style.display  = 'none';
-        }
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
       }
-      window.addEventListener('scroll', updateNav, { passive: true });
-      updateNav(); // run on page load
+    });
 
-      /* ── Mobile menu toggle ── */
-      var btn = document.getElementById('mobile-toggle');
-      var menu = document.getElementById('mobile-menu');
-      if (btn && menu) {
-        btn.addEventListener('click', function() {
-          menu.classList.toggle('open');
-          var icon = document.getElementById('menu-icon');
-          if (icon) {
-            icon.innerHTML = menu.classList.contains('open')
-              ? '<path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2"/>'
-              : '<path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2"/>';
-          }
-        });
-        var links = menu.querySelectorAll('a');
-        for (var i = 0; i < links.length; i++) {
-          links[i].addEventListener('click', function() {
-            menu.classList.remove('open');
-            var icon = document.getElementById('menu-icon');
-            if (icon) icon.innerHTML = '<path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2"/>';
-          });
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
-      }
+      });
+    });
 
-      /* ── Active nav link highlight on scroll ── */
-      var sections = document.querySelectorAll('section[id]');
-      var navLinks = document.querySelectorAll('.nav-links a');
-      function updateActive() {
-        var scrollMid = window.scrollY + window.innerHeight / 3;
-        for (var i = 0; i < sections.length; i++) {
-          var s    = sections[i];
-          var sTop = window.scrollY + s.getBoundingClientRect().top;
-          if (scrollMid >= sTop && scrollMid < sTop + s.offsetHeight) {
-            for (var j = 0; j < navLinks.length; j++) navLinks[j].classList.remove('active');
-            var link = document.querySelector('.nav-links a[href="#' + s.id + '"]');
-            if (link) link.classList.add('active');
-          }
-        }
-      }
-      window.addEventListener('scroll', updateActive, { passive: true });
-      updateActive();
+    // Mobile menu toggle
+    const menuBtn = document.querySelector('.menu-btn');
+    const navMenu = document.querySelector('.nav-menu');
+    menuBtn.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      menuBtn.classList.toggle('active');
+    });
+
+    // Dropdown hover
+    document.querySelectorAll('.has-dropdown').forEach(item => {
+      item.addEventListener('mouseenter', () => {
+        item.classList.add('hover');
+      });
+      item.addEventListener('mouseleave', () => {
+        item.classList.remove('hover');
+      });
     });
   </script>
 </body>

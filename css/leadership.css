@@ -1,0 +1,103 @@
+/* ── LEADERSHIP ── */
+.leadership {
+  background: linear-gradient(180deg, var(--color-deep-space) 0%, #0B1D4A 100%);
+  position: relative;
+}
+
+.leadership__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-5);
+  margin-top: var(--sp-12);
+}
+
+.leadership__card {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: var(--sp-8) var(--sp-6);
+  text-align: center;
+  align-items: center;
+  transition: all var(--transition-base);
+}
+
+.leadership__card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(0,212,170,0.3);
+  box-shadow: var(--shadow-glow-cyan);
+}
+
+/* Avatar — initials only, no photo */
+.leadership__avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(0,102,255,0.2), rgba(0,212,170,0.15));
+  border: 2px solid rgba(0,212,170,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--sp-5);
+  flex-shrink: 0;
+}
+
+.leadership__avatar-initials {
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-bold);
+  color: var(--color-vivid-cyan);
+  letter-spacing: 0.05em;
+}
+
+.leadership__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-1);
+  width: 100%;
+  flex: 1;
+}
+
+/* Push description to fill space, anchor button at bottom */
+.leadership__info p:not(.tag):not(.text-muted) {
+  flex: 1;
+}
+
+.leadership__info .text-card-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2vw, 1.75rem);
+  font-weight: var(--fw-bold);
+  letter-spacing: -0.01em;
+  background: linear-gradient(135deg, var(--color-white) 0%, rgba(224,231,255,0.85) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: var(--sp-1);
+}
+
+.leadership__info .tag {
+  margin-top: var(--sp-1);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: var(--sp-1) var(--sp-4);
+}
+
+.leadership__info p {
+  text-align: center;
+}
+
+.leadership__info .btn {
+  margin-top: var(--sp-4);
+}
+
+@media (max-width: 1024px) {
+  .leadership__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .leadership__grid { grid-template-columns: 1fr; }
+  .leadership__card { flex-direction: row; text-align: left; align-items: flex-start; gap: var(--sp-5); }
+  .leadership__avatar { margin-bottom: 0; flex-shrink: 0; }
+  .leadership__info { align-items: flex-start; }
+  .leadership__info p { text-align: left; }
+}
