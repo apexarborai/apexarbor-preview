@@ -102,14 +102,21 @@ tailwind.config = {
   vertical-align: middle;
 }
 /* Carousel tab styles */
-/* Slide top-aligned so extra hero height stays at bottom */
-.carousel-slide {
-  align-items: flex-start !important;
-  padding-top: 2rem;
-}
 </style>
 </head>
 <body class="bg-background text-on-background font-sans selection:bg-primary-fixed selection:text-on-primary-fixed">
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="bg-primary text-on-primary py-2 text-center relative overflow-hidden">
+  <div class="max-w-container-max mx-auto px-gutter flex items-center justify-center gap-3 text-sm">
+    <span class="font-mono text-[10px] font-bold bg-primary-fixed text-on-primary-fixed px-2 py-0.5 rounded uppercase tracking-wider">New</span>
+    <p class="font-body-sm text-on-primary/80">Apex Arbor achieves 96% cluster utilization with self-developed scheduling system</p>
+    <a href="#why-us" class="font-mono text-[11px] text-primary-fixed hover:text-on-primary transition-colors flex items-center gap-1 uppercase tracking-wider">
+      Learn More
+      <span class="material-symbols-outlined text-sm">arrow_forward</span>
+    </a>
+  </div>
+</div>
 
 <!-- NAVBAR -->
 <header class="fixed top-0 w-full z-50 bg-background transition-all duration-300" id="navbar">
@@ -138,7 +145,7 @@ tailwind.config = {
 <main class="pt-20">
 
 <!-- HERO SECTION with Carousel -->
-<section class="relative h-[75vh] min-h-[650px] flex flex-col overflow-hidden" id="hero">
+<section class="relative h-[60vh] min-h-[500px] flex flex-col overflow-hidden" id="hero">
   <canvas id="tech-fluid-bg" class="absolute inset-0 w-full h-full pointer-events-none" style="z-index:0"></canvas>
   <div class="flex-1 flex flex-col w-full max-w-container-max mx-auto px-gutter">
     <div class="flex-1 flex flex-col justify-center pb-8">
@@ -189,10 +196,12 @@ tailwind.config = {
         </div>
         </div>
         </div>
-  <!-- Tab Switches (inside hero — bottom of banner) -->
-  <div class="absolute bottom-0 left-0 right-0 border-t border-outline-variant/30 bg-[#0A1628]">
-    <div class="flex w-full max-w-container-max mx-auto">
-      <button class="carousel-tab active flex-1 flex flex-col items-center justify-center gap-1 py-4 font-mono transition-all cursor-pointer"
+</section>
+
+<!-- Tab Switches (outside hero — extends banner bottom) -->
+<div class="border-t border-outline-variant/30 bg-[#0A1628]">
+  <div class="flex w-full max-w-container-max mx-auto">
+    <button class="carousel-tab active flex-1 flex flex-col items-center justify-center gap-1 py-4 font-mono transition-all cursor-pointer"
               data-slide="0">
         <span class="text-[10px] uppercase tracking-widest opacity-60 leading-none">CLOUD</span>
         <span class="text-[13px] font-bold leading-tight">AI Cloud</span>
@@ -208,8 +217,7 @@ tailwind.config = {
         <span class="text-[13px] font-bold leading-tight">Global Network</span>
       </button>
   </div>
-</div></div>
-</section>
+</div>
 
 <!-- STATS BAR -->
 <section class="bg-[#0A1628] py-6 text-on-primary">
